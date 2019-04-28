@@ -1,0 +1,28 @@
+.project-form__title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > mat-form-field {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.btn {
+  position: relative;
+  margin: 0 10%;
+  width: 30%;
+  background-color: #50B7B4;
+  color: white;
+  display: inline-block;
+}
+
+.btn:hover,
+.btn:active{
+  background-color: #BAE4E3;
+}

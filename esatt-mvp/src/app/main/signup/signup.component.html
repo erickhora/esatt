@@ -1,0 +1,71 @@
+<div class="signup-bg">
+  <div class="signup-logo"></div>
+
+  <form class="text-center" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <p class="h4 mb-4" style="padding-top: 10px;">Cadastro</p>
+    <hr>
+    <div class="form-row mb-2">
+      <div class="col">
+        <!-- First name -->
+        <mat-form-field appearance="outline">
+          <mat-label>Nome:</mat-label>
+          <input type="text" id="name" matInput placeholder="Nome:" formControlName="name" required>
+          <mat-error *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched">
+            Digite um nome
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <!-- Last name -->
+        <mat-form-field appearance="outline">
+          <mat-label>Sobrenome:</mat-label>
+          <input matInput type="text" id="lastname" placeholder="Sobrenome:" formControlName="lastname" required>
+          <mat-error *ngIf="!signupForm.get('lastname').valid && signupForm.get('lastname').touched">
+            Digite um sobrenome
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- E-mail -->
+    <mat-form-field appearance="outline">
+      <mat-label>Email:</mat-label>
+      <input matInput type="email" id="email" placeholder="Email:" formControlName="email" required>
+      <mat-error *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">
+        Digite um email válido
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Password -->
+    <mat-form-field appearance="outline">
+      <mat-label>Senha:</mat-label>
+      <input matInput type="password" id="password" placeholder="Senha:" formControlName="password" required>
+      <mat-error *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
+        Digite uma senha
+      </mat-error>
+    </mat-form-field>
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+      Ao menos 6 caracteres e 1 dígito
+    </small>
+
+    <!-- Newsletter -->
+    <!-- <div class="row">
+      <div class="col-md-6 mx-auto d-flex justify-content-center">
+        <mat-checkbox color="primary">Inscreva-se na nossa newsletter!</mat-checkbox>
+      </div>
+    </div> -->
+
+    <!-- Sign up button -->
+    <button class="btn btn-primary btn-block my-4" type="submit">Registre-se</button>
+
+    <hr>
+
+    <!-- Terms of service -->
+    <p>Ao clicar em
+      <em>Registre-se</em> você concorda com nossos
+      <a href="" target="_blank">termos de serviço</a> e nossa
+      <a href="" target="_blank">política de privacidade</a>.
+      </p>
+
+  </form>
+</div>

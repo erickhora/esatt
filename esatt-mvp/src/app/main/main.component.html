@@ -1,0 +1,46 @@
+<div class="login-bg">
+  <div class="login-logo"></div>
+  <form class="text-center">
+
+    <p style="padding-top: 10px; font-size: 25px;">Acesso</p>
+    <hr>
+    <!-- Email -->
+    <!-- <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail"> -->
+    <p class="form-field">
+      <mat-form-field appearance="outline">
+        <mat-label>Email:</mat-label>
+        <input matInput placeholder="Email:">
+      </mat-form-field>
+    </p>
+    <!-- Password -->
+    <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Senha"> -->
+    <p class="form-field">
+      <mat-form-field appearance="outline">
+        <mat-label>Senha:</mat-label>
+        <input matInput placeholder="Senha:" type="password">
+      </mat-form-field>
+    </p>
+
+    <div class="d-flex justify-content-around">
+      <div>
+        <!-- Remember me -->
+        <mat-checkbox color="primary">Lembre-se de mim!</mat-checkbox>
+      </div>
+      <div>
+        <!-- Forgot password -->
+        <a href="">Esqueceu a senha?</a>
+      </div>
+    </div>
+
+    <!-- Sign in button -->
+    <button class="btn btn-primary btn-block my-4" type="submit" (click)="onLoginRedirect()">Entrar</button>
+    <hr>
+    <!-- Register -->
+    <p>Não é membro?
+      <a class="register-btn" (click)="onSignUpRedirect()">Registrar</a>
+    </p>
+
+  </form>
+</div>
+
+

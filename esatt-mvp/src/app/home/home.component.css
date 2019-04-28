@@ -1,0 +1,41 @@
+mat-grid-tile {
+  position: absolute;
+}
+
+.history {
+  height: 100%;
+}
+
+.btn-router__project {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../../utilities/IPimisr-button.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -20px;
+  background-origin: border-box;
+}
+
+
+.btn-router__teams {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../../utilities/team-button.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-origin: border-box;
+}
+
+.btn-router__history {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../../utilities/history-button.jpg");
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  background-position-x: -180px;
+  background-origin: border-box;
+}
+

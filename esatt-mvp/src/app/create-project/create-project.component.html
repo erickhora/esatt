@@ -1,0 +1,31 @@
+<!-- Nessa parte das minhas tabelas o seguinte deve acontecer. Quando a pessoas selecionar
+minhas tabelas, deve aparecer uma caixa para subir as tabelas dela. Nesse caso a dúvida é
+se ele vai ser tratada como orçamentos ou uma coisa a parte. No caso "Minhas Tabelas" serão as
+tabelas antigas que já estão na plataforma ou que irão adicionar? Como diferenciar? -->
+<app-header></app-header>
+<div>
+  <form style="padding-top: 10px;">
+    <h1 class="project-form__title">Criar Orçamento</h1>
+    <hr>
+    <div class="example-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome do Projeto</mat-label>
+        <input matInput placeholder="Nome do projeto:">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Descrição:</mat-label>
+        <textarea matInput placeholder="Descrição do projeto:"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-select placeholder="Selecione a referência">
+          <mat-option value="sinapi">SINAPI</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button class="btn">Quantitativos</button>
+
+    <button class="btn" (click)="onCreateRedirect()">Criar orçamento</button>
+  </form>
+</div>

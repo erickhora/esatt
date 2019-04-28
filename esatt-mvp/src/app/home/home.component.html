@@ -1,0 +1,23 @@
+<mat-grid-list cols="2" rowHeight="2:1">
+  <mat-grid-tile>
+    <button class="btn btn-router__project" (click)="onProjectRedirect()"></button>
+  </mat-grid-tile>
+  <mat-grid-tile class="history">
+    <app-latest-history></app-latest-history>
+  </mat-grid-tile>
+  <mat-grid-tile >
+    <button class="btn btn-router__teams" (click)="openSm(content)">
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Atenção!</h4>
+        </div>
+        <div class="modal-body">
+          <p>Função não implementada :( Aguarde novidades&hellip;</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fechar</button>
+        </div>
+      </ng-template>
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>
