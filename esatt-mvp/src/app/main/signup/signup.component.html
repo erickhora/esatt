@@ -1,5 +1,5 @@
 <div class="signup-bg">
-  <div class="signup-logo"></div>
+  <div class="signup-logo" (click)="onLoginRedirect()"></div>
 
   <form class="text-center" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <p class="h4 mb-4" style="padding-top: 10px;">Cadastro</p>
@@ -56,7 +56,7 @@
     </div> -->
 
     <!-- Sign up button -->
-    <button class="btn btn-primary btn-block my-4" type="submit">Registre-se</button>
+    <button class="btn btn-block my-4" type="submit">Registre-se</button>
 
     <hr>
 

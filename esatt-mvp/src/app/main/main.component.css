@@ -36,6 +36,15 @@ mat-form-field {
   width: 100%;
 }
 
+.btn {
+  background-color: #50B7B4;
+  color: white;
+}
+
+.btn:hover{
+  background-color: #BAE4E3;
+}
+
 p > a {
   color: #007bff;
   text-decoration: none;

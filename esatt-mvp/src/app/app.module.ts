@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
 import { MatToolbarModule, MatGridListModule, MatListModule,
@@ -8,6 +8,7 @@ import { MatToolbarModule, MatGridListModule, MatListModule,
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FileUploadModule } from 'primeng/fileupload';
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { HomeLayoutComponent } from './layouts/home-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout.component';
 import { SignupComponent } from './main/signup/signup.component';
 import { LatestHistoryComponent } from './home/latest-history/latest-history.component';
+import { SignupService } from './main/signup/signup.service';
 
 @NgModule({
   declarations: [
@@ -55,9 +57,10 @@ import { LatestHistoryComponent } from './home/latest-history/latest-history.com
     MatTableModule,
     MatCheckboxModule,
     MDBBootstrapModule.forRoot(),
-    FileUploadModule
+    FileUploadModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [SignupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

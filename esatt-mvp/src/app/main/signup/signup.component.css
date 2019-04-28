@@ -16,6 +16,7 @@
   margin: 0px 20px;
   color: white;
   grid-column: 2 / 3;
+  cursor: pointer;
 }
 
 form {
@@ -34,6 +35,15 @@ form {
 mat-form-field {
   display: block;
   margin: auto;
+}
+
+.btn {
+  background-color: #50B7B4;
+  color: white;
+}
+
+.btn:hover{
+  background-color: #BAE4E3;
 }
 
 @media (max-width: 500px){
