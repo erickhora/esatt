@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Validators, FormControl, FormGroup } from '@angular/forms';
-import { SignupService } from './signup.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,11 +12,7 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   users = [];
 
-  constructor(private router: Router, private signupService: SignupService) { }
-
-  private generateId(){
-    return Math.round(Math.random()*10000);
-  }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.signupForm = new FormGroup({
@@ -31,16 +27,9 @@ export class SignupComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  onSubmit(id: number, name: string, lastname: string, email: string, password: string){
-    this.users.push({
-      id: this.generateId(),
-      form: this.signupForm.getRawValue()
-    });
-
-    this.signupService.storeUsers(this.users).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
-    );
+  onSubmit(){
+    const signupFormValue = this.signupForm.value;
+    this.authService.singupUser(signupFormValue.email, signupFormValue.password);
+    this.signupForm.reset();
   }
-
 }

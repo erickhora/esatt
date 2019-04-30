@@ -23,7 +23,7 @@ import { HomeLayoutComponent } from './layouts/home-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout.component';
 import { SignupComponent } from './main/signup/signup.component';
 import { LatestHistoryComponent } from './home/latest-history/latest-history.component';
-import { SignupService } from './main/signup/signup.service';
+import { AuthService } from './main/auth.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +60,7 @@ import { SignupService } from './main/signup/signup.service';
     FileUploadModule,
     HttpModule
   ],
-  providers: [SignupService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
