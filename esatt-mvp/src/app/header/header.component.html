@@ -1,42 +1,28 @@
-<mat-toolbar class="header">
-  <div class="header-nav__brand">
-    <a class="navbar-brand" routerLink="/home">
-      <img src="../../../../utilities/logo.jpeg" width="90" height="40" class="d-inline-block align-top" alt="">
-    </a>
-  </div>
-  <ul class="header-nav__items">
-    <li class="header-nav__item">
-      <a routerLink="/home/new-project">Novo Projeto</a>
-    </li>
-
-    <li class="header-nav__item">
-      <a (click)="openSm(content)">Equipes
-        <ng-template #content let-modal>
-          <div class="modal-header">
-            <h4 class="modal-title">Atenção!</h4>
-          </div>
-          <div class="modal-body">
-            <p>Função não implementada :( Aguarde novidades&hellip;</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fechar</button>
-          </div>
-        </ng-template>
+<nav class="navbar navbar-expand-sm navbar-dark">
+  <div class="container">
+      <a class="navbar-brand" (click)="onLogoRedirect()">
+          <img src="https://i.imgur.com/dBBWvJ7.jpg" width="80" height="40" class="d-inline-block align-top" alt="">
       </a>
-    </li>
-
-    <li class="header-nav__item">
-      <a routerLink="/home/history" >Histórico</a>
-    </li>
-
-    <!-- <ul class="header-nav__username">
-      <li class="dropdown">
-        <a class="dropdown-toggle" role="button">Olá, Usuário <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Termos de compromisso</a></li>
-          <li><a href="#">Ajuda</a></li>
-        </ul>
-      </li>
-    </ul> -->
-  </ul>
-</mat-toolbar>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" (click)="onNewProjectRedirect()">Novo projeto</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link disabled">Equipes</a>
+              </li>
+              <li class="nav-item dropdown justify-content-end">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Olá, usuário</a>
+                <div class="dropdown-menu">
+                  <a href="" class="dropdown-item">Termos</a>
+                  <a href="" class="dropdown-item">Ajuda</a>
+                  <a href="" class="dropdown-item" (click)="onLogout()" *ngIf="authService.isAuthenticated()">Sair</a>
+                </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>

@@ -1,9 +1,6 @@
-<mat-grid-list cols="2" rowHeight="2:1">
+<mat-grid-list cols="1" rowHeight="2:1">
   <mat-grid-tile>
     <button class="btn btn-router__project" (click)="onProjectRedirect()"></button>
-  </mat-grid-tile>
-  <mat-grid-tile class="history">
-    <app-latest-history></app-latest-history>
   </mat-grid-tile>
   <mat-grid-tile >
     <button class="btn btn-router__teams" (click)="openSm(content)">
@@ -19,5 +16,8 @@
         </div>
       </ng-template>
     </button>
+  </mat-grid-tile>
+  <mat-grid-tile class="bg-info">
+      <app-latest-history></app-latest-history>
   </mat-grid-tile>
 </mat-grid-list>

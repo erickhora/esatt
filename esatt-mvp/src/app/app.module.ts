@@ -24,6 +24,7 @@ import { MainLayoutComponent } from './layouts/main-layout.component';
 import { SignupComponent } from './main/signup/signup.component';
 import { LatestHistoryComponent } from './home/latest-history/latest-history.component';
 import { AuthService } from './main/auth.service';
+import { AuthGuard } from './main/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { AuthService } from './main/auth.service';
     FileUploadModule,
     HttpModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

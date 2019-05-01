@@ -18,10 +18,6 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['home/new-project']);
   }
 
-  onHistoryRedirect(){
-    this.router.navigate(['home/history']);
-  }
-
   openSm(content) {
     this.modalService.open(content, { size: 'sm' });
   }

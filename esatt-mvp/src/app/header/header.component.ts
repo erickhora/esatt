@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+import { AuthService } from '../main/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,14 +9,20 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
 
-  openSm(content) {
-    this.modalService.open(content, { size: 'sm' });
+  onLogoRedirect(){
+    this.router.navigate(['home']);
   }
 
+  onNewProjectRedirect(){
+    this.router.navigate(['home/new-project']);
+  }
 
+  onLogout(){
+    this.authService.logout();
+  }
 }

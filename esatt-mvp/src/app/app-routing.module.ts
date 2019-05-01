@@ -9,24 +9,23 @@ import { MainComponent } from './main/main.component';
 import { HomeLayoutComponent } from './layouts/home-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout.component';
 import { SignupComponent } from './main/signup/signup.component';
+import { AuthGuard } from './main/auth-guard.service';
 
-//Validar para só entrar em home e o resto se estiver logado
 const routes: Routes = [
   { path: '', component: MainLayoutComponent, children: [
     { path: '', component: MainComponent }
     ]
   },
-  { path: 'home', component: HomeLayoutComponent, children: [
+  { path: 'home', canActivate: [AuthGuard], component: HomeLayoutComponent, children: [
     { path: 'home', component: HomeComponent }
     ]
   },
-  { path: 'home/history', component: HistoryComponent },
-  { path: 'home/new-project', component: CreateProjectComponent
-  },
-  { path: 'home/new-project/budget', component: BudgetComponent },
+  { path: 'home/history', component: HistoryComponent, canActivate: [AuthGuard] },
+  { path: 'home/new-project', component: CreateProjectComponent, canActivate: [AuthGuard]  },
+  { path: 'home/new-project/budget', component: BudgetComponent, canActivate: [AuthGuard] },
   { path: 'signup', component: SignupComponent },
   // { path: 'home/teams', component: TeamsComponent },
-  { path: '**', redirectTo: '/home'}
+  { path: '**', redirectTo: '/'}
 ];
 
 @NgModule({
