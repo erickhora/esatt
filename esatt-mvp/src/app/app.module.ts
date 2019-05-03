@@ -2,9 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
-import { MatToolbarModule, MatGridListModule, MatListModule,
+import { MatGridListModule, MatListModule,
          MatFormFieldModule, MatAutocompleteModule,
-         MatSelectModule, MatInputModule, MatTableModule, MatCheckboxModule } from '@angular/material';
+         MatSelectModule, MatInputModule, MatTableModule, MatCheckboxModule,
+         MatDividerModule,
+         MatIconModule} from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FileUploadModule } from 'primeng/fileupload';
@@ -25,6 +27,7 @@ import { SignupComponent } from './main/signup/signup.component';
 import { LatestHistoryComponent } from './home/latest-history/latest-history.component';
 import { AuthService } from './main/auth.service';
 import { AuthGuard } from './main/auth-guard.service';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,8 @@ import { AuthGuard } from './main/auth-guard.service';
     HomeLayoutComponent,
     MainLayoutComponent,
     SignupComponent,
-    LatestHistoryComponent
+    LatestHistoryComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -47,16 +51,17 @@ import { AuthGuard } from './main/auth-guard.service';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    MatToolbarModule,
     MatGridListModule,
     MatFormFieldModule,
     MatSelectModule,
-    NgbModule,
     MatListModule,
     MatAutocompleteModule,
     MatInputModule,
     MatTableModule,
     MatCheckboxModule,
+    MatDividerModule,
+    MatIconModule,
+    NgbModule,
     MDBBootstrapModule.forRoot(),
     FileUploadModule,
     HttpModule

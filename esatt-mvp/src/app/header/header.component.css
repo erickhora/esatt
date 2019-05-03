@@ -2,6 +2,10 @@
   background-color: #50B7B4;
 }
 
+.container {
+  max-width: none;
+}
+
 .navbar-dark .nav-item.active .nav-link:not(.disabled) {
   color: #f5ffff;
 }
@@ -14,12 +18,10 @@
 
 /* Small devices: landscape phones*/
 @media (min-width: 576px) {
-
 }
 
 /* Medium devices: tablets */
 @media (min-width: 768px) {
-
 }
 
 /* Large devices: desktops */
