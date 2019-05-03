@@ -16,13 +16,13 @@ const routes: Routes = [
     { path: '', component: MainComponent }
     ]
   },
-  { path: 'home', canActivate: [AuthGuard], component: HomeLayoutComponent, children: [
+  { path: 'home', /*canActivate: [AuthGuard],*/ component: HomeLayoutComponent, children: [
     { path: 'home', component: HomeComponent }
     ]
   },
-  { path: 'home/history', component: HistoryComponent, canActivate: [AuthGuard] },
-  { path: 'home/new-project', component: CreateProjectComponent, canActivate: [AuthGuard]  },
-  { path: 'home/new-project/budget', component: BudgetComponent, canActivate: [AuthGuard] },
+  { path: 'home/history', component: HistoryComponent },
+  { path: 'home/new-project', component: CreateProjectComponent },
+  { path: 'home/new-project/budget', component: BudgetComponent },
   { path: 'signup', component: SignupComponent },
   // { path: 'home/teams', component: TeamsComponent },
   { path: '**', redirectTo: '/'}

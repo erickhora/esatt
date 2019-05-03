@@ -2,6 +2,16 @@
   background-color: #50B7B4;
 }
 
+.navbar-dark .nav-item.active .nav-link:not(.disabled) {
+  color: #f5ffff;
+}
+.navbar-dark .nav-item:focus .nav-link {
+  color: #f5ffff
+}
+.navbar-dark .nav-item:hover .nav-link:not(.disabled) {
+  color: #f5ffff;
+}
+
 /* Small devices: landscape phones*/
 @media (min-width: 576px) {
 

@@ -1,28 +1,42 @@
-.project-form__title {
-  text-align: center;
+.form-title {
   font-size: 30px;
+  text-align: center;
+  padding-top: 10px;
 }
 
-.example-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.example-container > mat-form-field {
-  width: 50%;
-  margin-left: 25%;
+mat-form-field {
+  width: 100%;
 }
 
 .btn {
-  position: relative;
-  margin: 0 10%;
-  width: 30%;
   background-color: #50B7B4;
   color: white;
-  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .btn:hover,
 .btn:active{
   background-color: #BAE4E3;
+}
+
+/* Small devices: landscape phones*/
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices: tablets */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices: desktops */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices: large desktops */
+@media (min-width: 1200px) {
+
 }
