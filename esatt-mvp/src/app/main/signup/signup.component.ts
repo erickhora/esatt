@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Validators, FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { SignupService } from './signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,10 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   users = [];
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router,
+              private authService: AuthService,
+              private sigupService: SignupService
+            ) { }
 
   ngOnInit() {
     this.signupForm = new FormGroup({
@@ -28,6 +32,9 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(){
+    //Salvar nome, sobrenome, email e senha na database
+    this.sigupService.storeUsers(this.signupForm.value);
+    //Autenticar cadastro
     const signupFormValue = this.signupForm.value;
     this.authService.singupUser(signupFormValue.email, signupFormValue.password);
     this.signupForm.reset();

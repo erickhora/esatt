@@ -13,22 +13,22 @@ tabelas antigas que já estão na plataforma ou que irão adicionar? Como difere
         <div class="form-container">
           <mat-form-field appearance="outline">
             <mat-label>Nome do Projeto</mat-label>
-            <input matInput placeholder="Nome do projeto:">
+            <input matInput name="projectName" ngModel placeholder="Nome do projeto:">
           </mat-form-field>
 
           <mat-form-field appearance="outline">
             <mat-label>Descrição:</mat-label>
-            <textarea matInput placeholder="Descrição do projeto:"></textarea>
+            <textarea matInput name="projectDescription" ngModel placeholder="Descrição do projeto:"></textarea>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
-            <mat-select placeholder="Selecione a referência">
+            <mat-select matInput name="projectReference" ngModel placeholder="Selecione a referência">
               <mat-option value="sinapi">SINAPI</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
         <button class="btn">Quantitativos</button>
-        <button class="btn" (click)="onCreateRedirect()">Criar orçamento</button>
+        <button class="btn" (click)="onCreateRedirect()" type="submit">Criar orçamento</button>
       </form>
     </div>
   </div>

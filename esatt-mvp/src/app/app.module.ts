@@ -28,6 +28,7 @@ import { LatestHistoryComponent } from './home/latest-history/latest-history.com
 import { AuthService } from './main/auth.service';
 import { AuthGuard } from './main/auth-guard.service';
 import { FilterPipe } from './filter.pipe';
+import { SignupService } from './main/signup/signup.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,7 @@ import { FilterPipe } from './filter.pipe';
     FileUploadModule,
     HttpModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, SignupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
