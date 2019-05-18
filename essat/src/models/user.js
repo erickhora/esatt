@@ -1,10 +1,16 @@
-const mongoose = require('./../database/index');
-const bcrypt = require('bcryptjs');
+const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const Budget = require('./budget');
+// const bcrypt = require('bcryptjs');
+
+const userSchema = new mongoose.Schema({
     name: {
         type: String,
-        require: true,
+        required: true,
+    },
+    lastname: {
+        type: String,
+        required: true,
     },
     email:{
         type: String,
@@ -17,11 +23,18 @@ const UserSchema = new mongoose.Schema({
         required: true,
         select: false,
     },
-    createAt:{
+    catalog: {
+        budgets: [{
+            budgetId: { type: Schema.Types.ObjectId, ref: 'Budget', required: true},
+        }]
+    },
+    createdAt:{
         type: Date,
         default: Date.now,
     },
 });
+
+module.exports = mongoose.model('User', userSchema);
 
 
 
@@ -31,7 +44,3 @@ const UserSchema = new mongoose.Schema({
 // this.password = hash;
 // next();
 // })
-
-const User = mongoose.model('User', UserSchema);
-
-module.exports = User;

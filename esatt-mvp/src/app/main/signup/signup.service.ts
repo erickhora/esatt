@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Http } from '@angular/http';
+import { Headers, Http } from '@angular/http';
 import { User } from 'src/models/user.model';
 
 @Injectable()
@@ -7,6 +7,11 @@ export class SignupService {
   constructor(private http: Http){}
 
   storeUsers(users: User[]){
-    return this.http.post('https://esatt-db-test.firebaseio.com/data.json', users);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.post('https://esatt-db-test.firebaseio.com/users.json', users, {headers: headers});
+  }
+
+  getUsers(){
+    return this.http.get('https://esatt-db-test.firebaseio.com/users.json');
   }
 }
