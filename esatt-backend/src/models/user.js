@@ -1,42 +1,40 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const Budget = require('./budget');
+const Budget = require("./budget");
 // const bcrypt = require('bcryptjs');
 
-const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema(
+  {
     name: {
-        type: String,
-        required: true,
+      type: String,
+      required: true
     },
     lastname: {
-        type: String,
-        required: true,
+      type: String,
+      required: true
     },
-    email:{
-        type: String,
-        unique:true,
-        required: true,
-        lowercase: true,
+    email: {
+      type: String,
+      unique: true,
+      required: true,
+      lowercase: true
     },
     password: {
-        type: String,
-        required: true,
-        select: false,
+      type: String,
+      required: true,
+      select: false
     },
-    catalog: {
-        budgets: [{
-            budgetId: { type: Schema.Types.ObjectId, ref: 'Budget', required: true},
-        }]
-    },
-    createdAt:{
-        type: Date,
-        default: Date.now,
-    },
-});
+    budgets: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Budget"
+      }
+    ]
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('User', userSchema);
-
-
+module.exports = mongoose.model("User", userSchema);
 
 // UserSchema.pre('save', async function (next) {
 

@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// const bcrypt = require('bcryptjs');
 
 const ItemSchema = new mongoose.Schema({
     name: {
@@ -23,7 +22,7 @@ const ItemSchema = new mongoose.Schema({
         required: true,
     },
     budgetId:{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Budget',
         required: true,
     },
@@ -34,11 +33,3 @@ const ItemSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Item', ItemSchema);
-
-
-// UserSchema.pre('save', async function (next) {
-
-// const hash = await bcrypt.hash(this.password, 10);
-// this.password = hash;
-// next();
-// })
