@@ -52,4 +52,11 @@ export class BudgetsService {
         this.budgetsUpdated.next([...this.budgets]);
       });
   }
+
+  deleteBudget(budgetId: string){
+    this.http.delete('http://localhost:3000/api/budgets/' + budgetId)
+      .subscribe(() => {
+        console.log('Deletado!');
+      });
+  }
 }
