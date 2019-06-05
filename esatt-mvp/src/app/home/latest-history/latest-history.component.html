@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 style="text-align:center; margin-top: 15px;">Últimos projetos</h1>
+  <mat-form-field class="w-100">
+    <input matInput [(ngModel)]="filteredOrcamento" placeholder="Pesquisar">
+  </mat-form-field>
+  <div>
+    <mat-list style="padding: 0;">
+      <mat-list-item
+      *ngFor="let budget of budgets | filter:filteredBudget:'name'"
+      style="padding: 0;"
+      >
+        <mat-icon>keyboard_arrow_right</mat-icon>
+        <h3 matLine> {{ budget.name }}
+          <!-- <p><small>Modificado em: {{ budget.lastModified }}</small></p> -->
+        </h3>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
