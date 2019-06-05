@@ -6,7 +6,7 @@ const Budget = require('./models/budget');
 
 const app = express();
 
-//db senha:t8loXPLkeb6aYADG
+//db senha: t8loXPLkeb6aYADG
 mongoose.connect("mongodb+srv://erickhora:t8loXPLkeb6aYADG@esatt-db-macdv.mongodb.net/esatt?retryWrites=true&w=majority")
   .then(() => {
     console.log('Conexão com banco de dados feita com sucesso!');
