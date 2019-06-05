@@ -45,9 +45,10 @@ export class BudgetsService {
       content,
       creator
     }
-    this.http.post<{message: string}>('http://localhost:3000/api/budgets', budget)
+    this.http.post<{message: string, budgetId: string}>('http://localhost:3000/api/budgets', budget)
       .subscribe((responseData) => {
-        console.log(responseData.message);
+        const id = responseData.budgetId;
+        budget.id = id;
         this.budgets.push(budget);
         this.budgetsUpdated.next([...this.budgets]);
       });
@@ -56,7 +57,9 @@ export class BudgetsService {
   deleteBudget(budgetId: string){
     this.http.delete('http://localhost:3000/api/budgets/' + budgetId)
       .subscribe(() => {
-        console.log('Deletado!');
+        const updatedBudgets = this.budgets.filter(budget => budget.id !== budgetId);
+        this.budgets = updatedBudgets;
+        this.budgetsUpdated.next([...this.budgets]);
       });
   }
 }

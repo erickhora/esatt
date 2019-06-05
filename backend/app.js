@@ -39,9 +39,11 @@ app.post("/api/budgets", (req, res, next) => {
     content: null,
     creator: 'Erick'
   });
-  budget.save();
-  res.status(201).json({
-    message: 'Um novo orçamento foi criado com sucesso.'
+  budget.save().then(createdBudget => {
+    res.status(201).json({
+      message: 'Um novo orçamento foi criado com sucesso.',
+      budgetId: createdBudget._id
+    });
   });
 });
 
