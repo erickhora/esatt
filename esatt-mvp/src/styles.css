@@ -1,9 +1,0 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-.bg-img-create-project
-{
-    background-image: url('https://i.imgur.com/IPimisr.png');
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
