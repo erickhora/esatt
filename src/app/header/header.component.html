@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm navbar-dark text-light">
+  <div class="container">
+      <a class="navbar-brand" (click)="onLogoRedirect()">
+          <img src="https://i.imgur.com/dBBWvJ7.jpg" width="80" height="40" class="d-inline-block align-top" alt="">
+      </a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link" (click)="onNewProjectRedirect()">Novo projeto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" (click)="onHistoryRedirect()">Histórico</a>
+            </li>
+              <li class="nav-item">
+                  <a class="nav-link disabled">Equipes</a>
+              </li>
+              <li class="nav-item dropdown justify-content-end">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Olá, usuário</a>
+                <div class="dropdown-menu">
+                  <a href="" class="dropdown-item">Termos</a>
+                  <a href="" class="dropdown-item">Ajuda</a>
+                  <a href="" class="dropdown-item" (click)="onLogout()" *ngIf="authService.isAuthenticated()">Sair</a>
+                </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>

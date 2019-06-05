@@ -1,0 +1,53 @@
+.signup-bg {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-rows: 25% auto 15%;
+  background-color: #50B7B4;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.signup-logo {
+  background-image: url("../../../../../utilities/logo.jpeg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0px 20px;
+  color: white;
+  grid-column: 2 / 3;
+  cursor: pointer;
+}
+
+form {
+  background-color: #F5FFFF;
+  color: black;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  padding: 0 20px;
+  font-size: 80%;
+}
+
+.col > mat-form-field {
+  width: 100%;
+}
+
+mat-form-field {
+  display: block;
+  margin: auto;
+}
+
+.btn {
+  background-color: #50B7B4;
+  color: white;
+}
+
+.btn:hover{
+  background-color: #BAE4E3;
+}
+
+@media (max-width: 500px){
+  .signup-bg {
+    grid-template-columns: 10% 80% 10%;
+  }
+}

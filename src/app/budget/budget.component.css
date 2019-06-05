@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+.mat-table-sticky {
+  border-top: 1px solid #e0e0e0;
+}
+
+.btn-organization{
+  text-align: center;
+}
+
+.btn {
+  margin: 10px 10%;
+  padding: 6px 30px;
+  background-color: #50B7B4;
+  color: white;
+}
+
+.btn:hover,
+.btn:active{
+  background-color:#BAE4E3;
+}

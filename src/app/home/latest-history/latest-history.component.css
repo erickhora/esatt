@@ -1,0 +1,17 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+small{
+  position: absolute;
+  color: lightgrey;
+  font-style: italic;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: none;
+  }
+}
