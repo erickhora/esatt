@@ -1,2 +1,19 @@
 <app-header></app-header>
-<p>Projetos</p>
+<div class="container">
+  <mat-list>
+    <mat-list-item *ngFor="let budget of budgets">
+      <!-- id -->
+      <h3 matLine>{{ budget.id }}</h3>
+      <!-- name -->
+      <h3 matLine>{{ budget.name }}</h3>
+      <!-- descriprion -->
+      <h3 matLine>{{ budget.descriprion }}</h3>
+      <!-- reference -->
+      <h3 matLine>{{ budget.reference }}</h3>
+      <!-- content -->
+      <h3 matLine>{{ budget.content }}</h3>
+      <!-- creator -->
+      <h3 matLine>{{ budget.creator }}</h3>
+    </mat-list-item>
+  </mat-list>
+</div>

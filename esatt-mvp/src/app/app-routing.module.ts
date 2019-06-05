@@ -9,7 +9,7 @@ import { MainComponent } from './main/main.component';
 import { HomeLayoutComponent } from './layouts/home-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout.component';
 import { SignupComponent } from './main/signup/signup.component';
-import { AuthGuard } from './main/auth-guard.service';
+import { AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: MainLayoutComponent, children: [

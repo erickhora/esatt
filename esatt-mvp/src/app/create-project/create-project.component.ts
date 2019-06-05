@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+
+import { BudgetsService } from '../services/budgets.service';
 
 @Component({
   selector: 'app-create-project',
@@ -7,14 +10,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-project.component.css']
 })
 export class CreateProjectComponent implements OnInit {
+  enteredName = '';
+  enteredDescription = '';
+  enteredReference = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public budgetsService: BudgetsService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onAddBudget(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    this.budgetsService.postBudget(
+      form.value.name,
+      form.value.description,
+      form.value.reference,
+      null,
+      ''
+    );
   }
-
-  onCreateRedirect(){
-    this.router.navigate(['home/new-project/budget']);
-  }
-
+  // onCreateRedirect(){
+  //   this.router.navigate(['home/new-project/budget']);
+  // }
 }

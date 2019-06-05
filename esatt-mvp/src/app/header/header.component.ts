@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../main/auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -20,6 +20,10 @@ export class HeaderComponent implements OnInit {
 
   onNewProjectRedirect(){
     this.router.navigate(['home/new-project']);
+  }
+
+  onHistoryRedirect(){
+    this.router.navigate(['home/history']);
   }
 
   onLogout(){

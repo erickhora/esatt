@@ -10,7 +10,7 @@ import { MatGridListModule, MatListModule,
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FileUploadModule } from 'primeng/fileupload';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,10 +25,10 @@ import { HomeLayoutComponent } from './layouts/home-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout.component';
 import { SignupComponent } from './main/signup/signup.component';
 import { LatestHistoryComponent } from './home/latest-history/latest-history.component';
-import { AuthService } from './main/auth.service';
-import { AuthGuard } from './main/auth-guard.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth-guard.service';
 import { FilterPipe } from './filter.pipe';
-import { SignupService } from './main/signup/signup.service';
+import { SignupService } from './services/signup.service';
 
 @NgModule({
   declarations: [
@@ -65,7 +65,7 @@ import { SignupService } from './main/signup/signup.service';
     NgbModule,
     MDBBootstrapModule.forRoot(),
     FileUploadModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [AuthService, AuthGuard, SignupService],
   bootstrap: [AppComponent]
