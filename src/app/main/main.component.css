@@ -9,7 +9,7 @@
 }
 
 .login-logo {
-  background-image: url("../../../../utilities/logo.jpeg");
+  background-image: url("../../../utilities/logo.jpeg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

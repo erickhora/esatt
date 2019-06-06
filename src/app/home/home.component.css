@@ -1,23 +1,9 @@
 mat-grid-tile {
   background: white;
 }
-/*
-.bg-teams{
-  background-image: url('../../../../utilities/IPimisr-button.jpg');
-  background-repeat: no-repeat;
-  top: 0;
-  left: 0;
-} */
-
-/* .bg-project{
-  background-image: url('../../../../utilities/team-button.jpg');
-  background-repeat: no-repeat;
-  top: 0;
-  left: 0;
-} */
 
 .btn-router__project {
-  background-image: url('../../../../utilities/IPimisr-button.jpg');
+  background-image: url('../../../utilities/IPimisr-button.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-clip: border-box;
@@ -30,7 +16,7 @@ mat-grid-tile {
 
 
 .btn-router__teams {
-  background-image: url('../../../../utilities/team-button.jpg');
+  background-image: url('../../../utilities/team-button.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-clip: border-box;
