@@ -20,9 +20,9 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent }
     ]
   },
-  { path: 'home/history', component: HistoryComponent },
+  { path: 'home/budgets', component: HistoryComponent },
+  { path: 'home/budgets/:id', component: BudgetComponent },
   { path: 'home/new-project', component: CreateProjectComponent },
-  { path: 'home/new-project/budget', component: BudgetComponent },
   { path: 'signup', component: SignupComponent },
   // { path: 'home/teams', component: TeamsComponent },
   { path: '**', redirectTo: '/'}

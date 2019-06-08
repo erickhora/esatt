@@ -1,19 +1,26 @@
 <app-header></app-header>
 <div class="container">
+  <h3 style="text-align: center">Histórico</h3>
+  <hr>
   <mat-list>
-    <mat-list-item *ngFor="let budget of budgets">
-      <!-- id -->
-      <h3 matLine>{{ budget.id }}</h3>
-      <!-- name -->
+    <mat-list-item *ngFor="let budget of budgets" routerLink="/home/budgets/{{budget.id}}" class="listItem">
       <h3 matLine>{{ budget.name }}</h3>
-      <!-- descriprion -->
-      <h3 matLine>{{ budget.descriprion }}</h3>
-      <!-- reference -->
-      <h3 matLine>{{ budget.reference }}</h3>
-      <!-- content -->
-      <h3 matLine>{{ budget.content }}</h3>
-      <!-- creator -->
-      <h3 matLine>{{ budget.creator }}</h3>
+      <mat-icon>keyboard_arrow_right</mat-icon>
+      <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
+  <hr>
 </div>
+
+<!-- id -->
+<!-- <h3 matLine>{{ budget.id }}</h3> -->
+<!-- name -->
+<!-- <h3 matLine>{{ budget.name }}</h3> -->
+<!-- descriprion -->
+<!-- <h3 matLine>{{ budget.descriprion }}</h3> -->
+<!-- reference -->
+<!-- <h3 matLine>{{ budget.reference }}</h3> -->
+<!-- content -->
+<!-- <h3 matLine>{{ budget.content }}</h3> -->
+<!-- creator -->
+<!-- <h3 matLine>{{ budget.creator }}</h3> -->

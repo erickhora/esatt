@@ -8,8 +8,9 @@ import { Budget } from '../models/budget.model';
 @Injectable({ providedIn: 'root' })
 export class BudgetsService {
   private budgets: Budget[] = [];
-  private budget: Budget;
+  private _budget: Budget;
   private budgetsUpdated = new Subject<Budget[]>();
+  private budgetRetrieved = new Subject<Budget>();
 
   constructor(private http: HttpClient) {}
 
@@ -79,8 +80,13 @@ export class BudgetsService {
         'http://localhost:3000/api/budgets/' + budgetId
       )
       .subscribe(budgetData => {
-        this.budget = budgetData.budget;
+        this._budget = budgetData.budget;
+        this.budgetRetrieved.next(this._budget);
       });
+  }
+
+  getBudgetRetrieved(){
+    return this.budgetRetrieved.asObservable();
   }
 
   // DELETE Um orçamento

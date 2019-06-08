@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onHistoryRedirect(){
-    this.router.navigate(['home/history']);
+    this.router.navigate(['home/budgets']);
   }
 
   onLogout(){

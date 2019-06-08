@@ -65,7 +65,7 @@ app.post("/api/budgets", (req, res, next) => {
 app.get("/api/budgets/:id", (req, res, next) => {
   Budget.findOne({_id: req.params.id }).then(result => {
     res.status(200).json({
-      message: "Orçamento " + result._id + " recuperado com sucesso!", //Se der errado substituir _id por id
+      message: "Orçamento " + result._id + " recuperado com sucesso!",
       budget: result
     });
   });
