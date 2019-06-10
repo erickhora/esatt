@@ -48,6 +48,7 @@ import { SignupService } from './services/signup.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -65,7 +66,6 @@ import { SignupService } from './services/signup.service';
     NgbModule,
     MDBBootstrapModule.forRoot(),
     FileUploadModule,
-    HttpClientModule
   ],
   providers: [AuthService, AuthGuard, SignupService],
   bootstrap: [AppComponent]

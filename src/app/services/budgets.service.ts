@@ -10,8 +10,9 @@ export class BudgetsService {
   private budgets: Budget[] = [];
   private _budget: Budget;
   private budgetsUpdated = new Subject<Budget[]>();
+  /* private _budget: Budget;
   private budgetRetrieved = new Subject<Budget>();
-
+ */
   constructor(private http: HttpClient) {}
 
   // GET Todos os orçamentos
@@ -23,7 +24,7 @@ export class BudgetsService {
       .pipe(
         map(budgetData => {
           return budgetData.budgets.map(budget => {
-            return {
+              return {
               name: budget.name,
               description: budget.description,
               reference: budget.reference,
@@ -75,21 +76,16 @@ export class BudgetsService {
 
   // GET Um orçamento
   getBudget(budgetId: string) {
-    this.http
+    return this.http
       .get<{ message: string; budget: Budget }>(
         'http://localhost:3000/api/budgets/' + budgetId
-      )
-      .subscribe(budgetData => {
-        this._budget = budgetData.budget;
-        this.budgetRetrieved.next(this._budget);
-      });
+      ).pipe(map(retrievedBudget => {
+        retrievedBudget.budget.id = budgetId;
+        return this._budget = retrievedBudget.budget;
+      }));
   }
 
-  getBudgetRetrieved(){
-    return this.budgetRetrieved.asObservable();
-  }
-
-  // DELETE Um orçamento
+  // DELETE Um orçamento1
   deleteBudget(budgetId: string) {
     this.http
       .delete('http://localhost:3000/api/budgets/' + budgetId)
