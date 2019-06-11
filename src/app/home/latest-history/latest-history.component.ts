@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 
 import { Budget } from '../../models/budget.model';
 import { BudgetsService } from 'src/app/services/budgets.service';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-latest-history',
@@ -12,6 +13,7 @@ import { BudgetsService } from 'src/app/services/budgets.service';
 export class LatestHistoryComponent implements OnInit, OnDestroy {
   budgets: Budget[] = [];
   private budgetsSub: Subscription;
+  dataSource = new MatTableDataSource(this.budgets);
 
   filteredBudget = '';
 
@@ -24,6 +26,10 @@ export class LatestHistoryComponent implements OnInit, OnDestroy {
         this.budgets = budgets;
       });
   }
+
+  // applyFilter(filterValue: string) {
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
+  // }
 
   ngOnDestroy(){
     this.budgetsSub.unsubscribe();

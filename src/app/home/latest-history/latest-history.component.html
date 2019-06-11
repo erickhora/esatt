@@ -1,13 +1,17 @@
 <div class="container">
-  <h1 style="text-align:center; margin-top: 15px;">Últimos projetos</h1>
+  <!-- <h1 style="text-align:center; margin-top: 15px;">Últimos projetos</h1> -->
   <mat-form-field class="w-100">
     <input matInput [(ngModel)]="filteredOrcamento" placeholder="Pesquisar">
   </mat-form-field>
+  <!-- <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field> -->
   <div>
     <mat-list style="padding: 0;">
       <mat-list-item
       *ngFor="let budget of budgets | filter:filteredBudget:'name'"
-      style="padding: 0;"
+      style="padding: 0; cursor: pointer;"
+      routerLink="/home/budgets/{{budget.id}}"
       >
         <mat-icon>keyboard_arrow_right</mat-icon>
         <h3 matLine> {{ budget.name }}

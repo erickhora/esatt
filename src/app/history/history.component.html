@@ -1,15 +1,20 @@
 <app-header></app-header>
 <div class="container">
   <h3 style="text-align: center">Histórico</h3>
-  <hr>
+  <hr />
   <mat-list>
-    <mat-list-item *ngFor="let budget of budgets" routerLink="/home/budgets/{{budget.id}}" class="listItem">
+    <mat-list-item
+      *ngFor="let budget of budgets"
+      routerLink="/home/budgets/{{ budget.id }}"
+      class="listItem"
+      style="cursor: pointer;"
+    >
       <h3 matLine>{{ budget.name }}</h3>
       <mat-icon>keyboard_arrow_right</mat-icon>
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>
-  <hr>
+  <hr />
 </div>
 
 <!-- id -->

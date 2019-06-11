@@ -1,7 +1,5 @@
-.container {
-  position: absolute;
-  top: 0;
-  left: 0;
+.container{
+  width: 60%;
 }
 
 small{

@@ -3,6 +3,6 @@ export interface Budget{
   name: string;
   description: string;
   reference: string;
-  content: string;
+  content: object;
   creator: string;
 }

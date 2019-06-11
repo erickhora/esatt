@@ -1,13 +1,24 @@
-<mat-grid-list [cols]="breakpoint" rowHeight="2:1" (window:resize)="onResize($event)" gutterSize="0">
-  <!-- NOVO PROJETO -->
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Últimos Orçamentos">
+    <app-latest-history></app-latest-history>
+  </mat-tab>
+  <mat-tab label="Criar Orçamento">
+    <app-create-project></app-create-project>
+  </mat-tab>
+</mat-tab-group>
+
+
+
+<!--<mat-grid-list [cols]="breakpoint" rowHeight="2:1" (window:resize)="onResize($event)" gutterSize="0">
+  <!-- NOVO PROJETO
   <mat-grid-tile class="bg-project">
     <button class="btn btn-router__project" (click)="onProjectRedirect()"></button>
   </mat-grid-tile>
-  <!-- HISTORICO DE PROJETOS -->
+  <!-- HISTORICO DE PROJETOS
   <mat-grid-tile rowspan="2">
       <app-latest-history></app-latest-history>
   </mat-grid-tile>
-  <!-- EQUIPES -->
+  <!-- EQUIPES
   <mat-grid-tile class="bg-teams" >
     <button class="btn btn-router__teams" (click)="openSm(content)">
       <ng-template #content let-modal>
@@ -24,3 +35,4 @@
     </button>
   </mat-grid-tile>
 </mat-grid-list>
+-->

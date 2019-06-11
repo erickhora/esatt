@@ -1,3 +1,21 @@
+.name {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+  color: gray;
+  font-style: italic;
+}
+
+small{
+  display: block;
+  text-align: end;
+  color: grey;
+  font-style: italic;
+}
+
 table {
   width: 100%;
 }
@@ -11,6 +29,7 @@ tr.mat-footer-row {
 }
 
 .btn-organization{
+  margin-top: 15px;
   text-align: center;
 }
 

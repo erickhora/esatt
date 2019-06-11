@@ -6,7 +6,8 @@ import { MatGridListModule, MatListModule,
          MatFormFieldModule, MatAutocompleteModule,
          MatSelectModule, MatInputModule, MatTableModule, MatCheckboxModule,
          MatDividerModule,
-         MatIconModule} from '@angular/material';
+         MatIconModule,
+         MatTabsModule} from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FileUploadModule } from 'primeng/fileupload';
@@ -63,6 +64,7 @@ import { SignupService } from './services/signup.service';
     MatCheckboxModule,
     MatDividerModule,
     MatIconModule,
+    MatTabsModule,
     NgbModule,
     MDBBootstrapModule.forRoot(),
     FileUploadModule,

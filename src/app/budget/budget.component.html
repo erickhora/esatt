@@ -1,20 +1,12 @@
 <app-header></app-header>
 
-<!-- id -->
-<!-- <h5 matLine>{{ budget.id }}</h5> -->
-<!-- name -->
-<!-- <h5 matLine>{{ budget.name }}</h5> -->
-<!-- descriprion -->
-<!-- <h5 matLine>{{ budget.description }}</h5> -->
-<!-- reference -->
-<!-- <h5 matLine>{{ budget.reference }}</h5> -->
-<!-- content -->
-<!-- <h5 matLine>{{ budget.content }}</h5> -->
-<!-- creator -->
-<!-- <h5 matLine>{{ budget.creator }}</h5> -->
+<h3 class="name">{{ budget.name }}</h3>
+<h6 class="description">{{ budget.description }}</h6>
 
 <div class="container">
-  <table mat-table [dataSource]="budget" class="mat-elevation-z8">
+  <small>id: {{ budget.id }}</small>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Id Column -->
     <ng-container matColumnDef="id">
@@ -48,7 +40,8 @@
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef> Preço </th>
       <td mat-cell *matCellDef="let item"> {{ item.price }} </td>
-      <!-- <td mat-footer-cell *matFooterCellDef> {{ getTotalPrice() | currency }} </td> -->
+      <td mat-footer-cell *matFooterCellDef> Preço Total </td>
+      <!-- {{ getTotalPrice() | currency }} -->
     </ng-container>
 
     <!-- Reference Column -->
