@@ -73,7 +73,7 @@ app.get("/api/budgets/:id", (req, res, next) => {
 
 //DELETE Um orçamento
 app.delete("/api/budgets/:id", (req, res, next) => {
-  Post.deleteOne({ _id: req.params.id }).then(result => {
+  Budget.deleteOne({ _id: req.params.id }).then(result => {
     console.log(result);
     res.status(200).json({ message: "Orçamento deletado!" });
   });

@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 
 import { Budget } from '../models/budget.model';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BudgetsService } from '../services/budgets.service';
 
 @Component({
@@ -13,9 +13,8 @@ export class BudgetComponent implements OnInit {
   budget: Budget;
 
   displayedColumns: string[] = ['id', 'name', 'quantity', 'unity', 'price', 'reference'];
-  dataSource = this.budget;
 
-  constructor(private route: ActivatedRoute, private budgetsService: BudgetsService) { }
+  constructor(private route: ActivatedRoute, private budgetsService: BudgetsService, private router: Router) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -29,5 +28,10 @@ export class BudgetComponent implements OnInit {
       .subscribe(retrievedBudget => {
         this.budget = retrievedBudget;
       });
-    }
+  }
+
+  onDelete(budgetId: string){
+    this.budgetsService.deleteBudget(budgetId);
+    this.router.navigate(['home/budgets']);
+  }
 }
