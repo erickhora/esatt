@@ -1,32 +1,31 @@
-<!-- Nessa parte das minhas tabelas o seguinte deve acontecer. Quando a pessoas selecionar
-minhas tabelas, deve aparecer uma caixa para subir as tabelas dela. Nesse caso a dúvida é
-se ele vai ser tratada como orçamentos ou uma coisa a parte. No caso "Minhas Tabelas" serão as
-tabelas antigas que já estão na plataforma ou que irão adicionar? Como diferenciar? -->
 <div class="container">
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
-      <form class="form-group" (submit)="onAddBudget(budgetForm)" #budgetForm="ngForm">
+      <form class="form-group" [formGroup]="form" (submit)="onAddBudget()">
         <div class="form-container">
           <mat-form-field appearance="outline">
             <mat-label>Nome do Projeto</mat-label>
-            <input matInput name="name" #name="ngModel" ngModel placeholder="Nome do projeto:" required>
-            <mat-error *ngIf="name.invalid">O orçamento precisa de um nome.</mat-error>
+            <input matInput formControlName="name" placeholder="Nome do projeto:">
+            <mat-error *ngIf="form.get('name').invalid">O orçamento precisa de um nome.</mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
             <mat-label>Descrição:</mat-label>
-            <textarea matInput name="description" #description="ngModel" ngModel placeholder="Descrição do projeto:" required></textarea>
-            <mat-error *ngIf="description.invalid">O orçamento precisa de uma descrição.</mat-error>
+            <textarea matInput formControlName="description" placeholder="Descrição do projeto:"></textarea>
+            <mat-error *ngIf="form.get('description').invalid">O orçamento precisa de uma descrição.</mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
-            <mat-select matInput name="reference" ngModel placeholder="Selecione a referência">
+            <mat-select matInput formControlName="reference" placeholder="Selecione a referência">
               <mat-option value="sinapi">SINAPI</mat-option>
             </mat-select>
+            <mat-error *ngIf="form.get('reference').invalid">O orçamento precisa de uma referência.</mat-error>
           </mat-form-field>
         </div>
-        <button class="btn">Quantitativos</button>
-        <button class="btn" type="submit">Criar orçamento</button>
+        <button class="btn btn-outline-success" type="button" (click)="filePicker.click()">Adicione seus quantitativos</button>
+        <input type="file" #filePicker (change)="onAddedQuantity($event)">
+        <hr>
+        <button class="btn btn-create" type="submit">Criar orçamento</button>
       </form>
     </div>
   </div>

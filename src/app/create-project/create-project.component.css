@@ -12,16 +12,24 @@ mat-form-field {
   width: 100%;
 }
 
+input[type="file"]{
+  visibility: hidden;
+}
+
 .btn {
-  background-color: #50B7B4;
-  color: white;
   width: 100%;
   margin-bottom: 10px;
   display: block;
 }
 
-.btn:hover,
-.btn:active{
+.btn-create {
+  margin-top: 30px;
+  background-color: #50B7B4;
+  color: white;
+}
+
+.btn-create:hover,
+.btn-create:active{
   background-color: #BAE4E3;
 }
 
