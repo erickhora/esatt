@@ -10,14 +10,14 @@ const MIME_TYPE_MAP = {
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 'xlsx'
 };
 
-const storage = multer.diskStorage({
+const qtyStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     const isValid = MIME_TYPE_MAP[file.mimetype];
     let error = new Error("Invalid mime type");
     if(isValid) {
       error = null;
     }
-    cb(error, "backend/quantities");
+    cb(error, "../backend/quantities");
   },
   filename: (req, file, cb) => {
     const name = file.originalname.toLowerCase().split(' ').join('-');
@@ -37,18 +37,26 @@ router.get("", (req, res, next) => {
 });
 
 //POST Um orçamento
-router.post("", multer({storage: storage}).single("quantity"), (req, res, next) => {
+router.post("", multer({storage: qtyStorage}).single("quantity"), (req, res, next) => {
+  const url = req.protocol + '://' + req.get("host");
   const budget = new Budget({
     name: req.body.name,
     description: req.body.description,
     reference: req.body.reference,
-    content: null,
+    content: url + "/quantities/" + req.file.filename,
     creator: "Erick"
   });
   budget.save().then(createdBudget => {
     res.status(201).json({
       message: "Um novo orçamento foi criado com sucesso.",
-      budgetId: createdBudget._id
+      budget: {
+        id: createdBudget._id,
+        name: createdBudget.name,
+        description: createdBudget.description,
+        reference: createdBudget.reference,
+        content: createdBudget.content,
+        creator: createdBudget.creator,
+      }
     });
     console.log(createdBudget);
   }).catch(error => {
@@ -59,9 +67,18 @@ router.post("", multer({storage: storage}).single("quantity"), (req, res, next) 
 //GET Um orçamento
 router.get("/:id", (req, res, next) => {
   Budget.findOne({_id: req.params.id }).then(result => {
+    //transformar quantitativos em JSON;
+    //cruzar com tabela de referência escolhida
     res.status(200).json({
       message: "Orçamento " + result._id + " recuperado com sucesso!",
-      budget: result
+      budget: {
+        id: result._id,
+        name: result.name,
+        description: result.description,
+        reference: result.reference,
+        content: result.content,
+        creator: result.creator,
+      }
     });
   });
 });

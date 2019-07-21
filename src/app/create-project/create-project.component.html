@@ -10,7 +10,7 @@
               formControlName="name"
               placeholder="Nome do projeto:"
             />
-            <mat-error *ngIf="form.get('name').invalid && form.get('name').dirty"
+            <mat-error *ngIf="form.get('name').invalid"
               >O orçamento precisa de um nome.</mat-error
             >
           </mat-form-field>
@@ -22,7 +22,7 @@
               formControlName="description"
               placeholder="Descrição do projeto:"
             ></textarea>
-            <mat-error *ngIf="form.get('description').invalid && form.get('description').dirty"
+            <mat-error *ngIf="form.get('description').invalid"
               >O orçamento precisa de uma descrição.</mat-error
             >
           </mat-form-field>
@@ -35,7 +35,7 @@
             >
               <mat-option value="sinapi">SINAPI</mat-option>
             </mat-select>
-            <mat-error *ngIf="form.get('reference').invalid && form.get('reference').dirty"
+            <mat-error *ngIf="form.get('reference').invalid"
               >O orçamento precisa de uma referência.</mat-error
             >
           </mat-form-field>
@@ -47,6 +47,7 @@
         >
           Adicione sua tabela de quantitativos
         </button>
+        <small>{{ fileName }}</small>
         <input type="file" #filePicker (change)="onAddedQuantity($event)" />
         <hr />
         <button class="btn btn-create" type="submit">Criar orçamento</button>

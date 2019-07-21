@@ -3,11 +3,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { BudgetsService } from '../services/budgets.service';
 
-export interface Item {
-  value: string;
-  viewValue: string;
-}
-
 @Component({
   selector: 'app-create-project',
   templateUrl: './create-project.component.html',
@@ -17,14 +12,9 @@ export class CreateProjectComponent implements OnInit {
   enteredName = '';
   enteredDescription = '';
   enteredReference = '';
+  fileName;
   form: FormGroup;
   @Input() myPrices;
-  selectItems: Item[] = [
-    { value: 'id', viewValue: 'Código' },
-    { value: 'name', viewValue: 'Nome' },
-    { value: 'quantity', viewValue: 'Quantidade' },
-    { value: 'unity', viewValue: 'Unidade' }
-  ];
 
   constructor(public budgetsService: BudgetsService) {}
 
@@ -39,7 +29,9 @@ export class CreateProjectComponent implements OnInit {
       reference: new FormControl(null, {
         validators: [Validators.required]
       }),
-      qtyFile: new FormControl(null, {
+      content: new FormControl(null),
+      creator: new FormControl(null),
+      quantity: new FormControl(null, {
         validators: [Validators.required]
       }),
     });
@@ -47,23 +39,27 @@ export class CreateProjectComponent implements OnInit {
 
   onAddedQuantity(event: Event){
     const qtyFile = (event.target as HTMLInputElement).files[0];
-    this.form.patchValue({qtyFile});
-    this.form.get('qtyFile').updateValueAndValidity();
+    this.fileName = qtyFile.name;
+    this.form.patchValue({quantity: qtyFile});
+    this.form.get('quantity').updateValueAndValidity();
+    console.log(qtyFile);
+    console.log(this.form);
   }
 
   onAddBudget() {
     if (this.form.invalid) {
+      console.log('Invalid: ' + this.form.invalid);
+      console.log(this.form.value);
       return;
     }
     this.budgetsService.postBudget(
       this.form.value.name,
       this.form.value.description,
       this.form.value.reference,
-      null,
+      '',
       '',
       this.form.value.quantity
     );
     console.log(this.form.value);
-    return false;
   }
 }

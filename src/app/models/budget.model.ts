@@ -1,8 +1,8 @@
-export interface Budget{
-  id: string,
+export interface Budget {
+  id: string;
   name: string;
   description: string;
   reference: string;
-  content: object;
+  content: string;
   creator: string;
 }

@@ -51,30 +51,34 @@ export class BudgetsService {
     name: string,
     description: string,
     reference: string,
-    content: object,
+    content: string,
     creator: string,
     quantity: File
   ) {
-    // const contentStr = JSON.stringify(content);
     const budgetData = new FormData();
     budgetData.append('name', name);
     budgetData.append('description', description);
     budgetData.append('reference', reference);
-    budgetData.append('content', null);
+    budgetData.append('content', content);
     budgetData.append('creator', creator);
     budgetData.append('quantity', quantity, name);
     this.http
-      .post<{ message: string; budgetId: string }>(
+      .post<{ message: string; budget: Budget }>(
         'http://localhost:3000/api/budgets',
         budgetData
       )
       .subscribe(responseData => {
         const budget: Budget = {
-          id: responseData.budgetId, name, description, reference, content, creator
+          id: responseData.budget.id,
+          name: responseData.budget.name,
+          description: responseData.budget.description,
+          reference: responseData.budget.reference,
+          content: responseData.budget.content,
+          creator: responseData.budget.creator
         };
         this.budgets.push(budget);
         this.budgetsUpdated.next([...this.budgets]);
-        // this.router.navigate(['home/budgets', budget.id]);
+        this.router.navigate(['home/budgets', responseData.budget.id]);
       });
   }
 
@@ -84,8 +88,8 @@ export class BudgetsService {
       .get<{ message: string; budget: Budget }>(
         'http://localhost:3000/api/budgets/' + budgetId
       ).pipe(map(retrievedBudget => {
+        console.log(retrievedBudget);
         retrievedBudget.budget.id = budgetId;
-        // retrievedBudget.budget.content = ();
         return this._budget = retrievedBudget.budget;
       }));
   }

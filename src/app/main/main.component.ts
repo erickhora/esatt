@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -11,7 +10,7 @@ import { AuthService } from '../services/auth.service';
 export class MainComponent implements OnInit {
   hide = true;
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,7 +18,6 @@ export class MainComponent implements OnInit {
   onLogIn(form: NgForm){
     const email = form.value.email;
     const password = form.value.password;
-    this.authService.signinUser(email, password);
   }
 
   onLoginRedirect(){

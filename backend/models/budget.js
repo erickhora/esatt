@@ -15,7 +15,8 @@ const budgetSchema = mongoose.Schema(
       required: true
     },
     content: {
-      type: Object
+      type: String,
+      required: true
     },
     creator: {
       type: String,

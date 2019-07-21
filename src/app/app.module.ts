@@ -26,10 +26,8 @@ import { HomeLayoutComponent } from './layouts/home-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout.component';
 import { SignupComponent } from './main/signup/signup.component';
 import { LatestHistoryComponent } from './home/latest-history/latest-history.component';
-import { AuthService } from './services/auth.service';
-import { AuthGuard } from './services/auth-guard.service';
+// import { AuthService } from './services/auth.service';
 import { FilterPipe } from './filter.pipe';
-import { SignupService } from './services/signup.service';
 import { BudgetChoiceComponent } from './home/budget-choice/budget-choice.component';
 
 @NgModule({
@@ -71,7 +69,7 @@ import { BudgetChoiceComponent } from './home/budget-choice/budget-choice.compon
     MDBBootstrapModule.forRoot(),
     FileUploadModule,
   ],
-  providers: [AuthService, AuthGuard, SignupService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
