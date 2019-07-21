@@ -1,15 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cors = require('cors');
 
-const Budget = require("./models/budget");
+const budgetRoutes = require('./routes/budgets');
 
 const app = express();
 
-//db senha: t8loXPLkeb6aYADG
+const port = process.env.PORT || 3000;
+
+//db senha: pwoZFgOV28vgnE6U
 mongoose
   .connect(
-    "mongodb+srv://erickhora:t8loXPLkeb6aYADG@esatt-db-macdv.mongodb.net/esatt?retryWrites=true&w=majority"
+    "mongodb+srv://erickhora:pwoZFgOV28vgnE6U@esatt-db-macdv.mongodb.net/esatt?retryWrites=true&w=majority",
+    { useNewUrlParser: true }
   )
   .then(() => {
     console.log("Conexão com banco de dados feita com sucesso!");
@@ -19,64 +23,26 @@ mongoose
   });
 
 app.use(bodyParser.json());
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, PATCH, DELETE, OPTIONS"
-  );
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+//   );
+//   next();
+// });
 
-//GET Todos os orçamentos
-app.get("/api/budgets", (req, res, next) => {
-  Budget.find().then(documents => {
-    res.status(200).json({
-      message: "Orçamentos recuperados com sucesso!",
-      budgets: documents
-    });
-  });
-});
+app.use("/api/budgets", budgetRoutes);
 
-//POST Um orçamento
-app.post("/api/budgets", (req, res, next) => {
-  const budget = new Budget({
-    name: req.body.name,
-    description: req.body.description,
-    reference: req.body.reference,
-    content: null,
-    creator: "Erick"
-  });
-  budget.save().then(createdBudget => {
-    res.status(201).json({
-      message: "Um novo orçamento foi criado com sucesso.",
-      budgetId: createdBudget._id
-    });
-  });
-});
-
-//GET Um orçamento
-app.get("/api/budgets/:id", (req, res, next) => {
-  Budget.findOne({_id: req.params.id }).then(result => {
-    res.status(200).json({
-      message: "Orçamento " + result._id + " recuperado com sucesso!",
-      budget: result
-    });
-  });
-});
-
-//DELETE Um orçamento
-app.delete("/api/budgets/:id", (req, res, next) => {
-  Budget.deleteOne({ _id: req.params.id }).then(result => {
-    console.log(result);
-    res.status(200).json({ message: "Orçamento deletado!" });
-  });
+app.listen(port, () => {
+  console.log('Servidor iniciado na porta ' + port);
 });
 
 module.exports = app;

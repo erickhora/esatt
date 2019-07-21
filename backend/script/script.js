@@ -19,4 +19,4 @@ const json_desCustoCompAnalitico = xlsx.utils.sheet_to_json(sheet_desCustoCompAn
 const json_desCustoCompSintetico = xlsx.utils.sheet_to_json(sheet_desCustoCompSintetico);
 const json_desPrecoInsumos = xlsx.utils.sheet_to_json(sheet_desPrecoInsumos);
 
-console.log(sheet_desCatCompAnaliticas);
+console.log(json_desCatCompAnaliticas);

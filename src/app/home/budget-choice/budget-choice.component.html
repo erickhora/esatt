@@ -1,0 +1,53 @@
+<!-- 1ª TELA -->
+<div class="container d-flex flex-column align-items-center" *ngIf="firstChoice">
+  <h1 class="title">
+    Qual será a referência de preço do seu orçamento?
+  </h1>
+  <div class="choice" (click)="myPrices = true; myRef = false; firstChoice = false">
+    Quero meu orçamento com meus preços
+  </div>
+  <div class="choice" (click)="myRef = true; myPrices = false; firstChoice = false">
+    Quero meu orçamento com preços de referências existentes
+  </div>
+</div>
+
+<!-- 2ª TELA - CRIAÇÃO DE ORÇAMENTO EXISTENTE -->
+<div class="container d-flex flex-column align-items-center" *ngIf="myRef && !firstChoice">
+  <h1 class="title">
+    <mat-icon (click)="myRef = false; firstChoice = true">keyboard_backspace</mat-icon>
+    Crie seu orçamento
+  </h1>
+  <app-create-project [myPrices]="myPrices"></app-create-project>
+</div>
+
+<!-- 2ª TELA - UPLOAD DE ORÇAMENTOS -->
+<div class="container d-flex flex-column align-items-center" *ngIf="myPrices && !firstChoice">
+  <h1 class="title">
+    <mat-icon (click)="myPrices = false; firstChoice = true">keyboard_backspace</mat-icon>
+    Faça upload do seus preços
+  </h1>
+
+  <form [formGroup]="form" (submit)="onAddPersonalReferences()">
+    <button
+    class="btn btn-outline btn-outline-success btn-block mt-2"
+    type="submit"
+      (click)="filePicker.click()"
+    >
+      Enviar minhas referências
+    </button>
+    <input
+      type="file"
+      #filePicker
+      (change)="onReferencePicked($event)"
+      accept="application/vnd.ms-excel,
+    application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    />
+    <button class="btn btn-block btn-success" (click)="afterUpload = true;">Criar Projeto</button>
+  </form>
+
+  <div class="container d-flex flex-column align-items-center" *ngIf="afterUpload">
+    <app-create-project class="mt-4"></app-create-project>
+  </div>
+</div>
+
+

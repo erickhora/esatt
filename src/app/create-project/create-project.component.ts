@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { BudgetsService } from '../services/budgets.service';
+
+export interface Item {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-create-project',
@@ -14,8 +18,15 @@ export class CreateProjectComponent implements OnInit {
   enteredDescription = '';
   enteredReference = '';
   form: FormGroup;
+  @Input() myPrices;
+  selectItems: Item[] = [
+    { value: 'id', viewValue: 'Código' },
+    { value: 'name', viewValue: 'Nome' },
+    { value: 'quantity', viewValue: 'Quantidade' },
+    { value: 'unity', viewValue: 'Unidade' }
+  ];
 
-  constructor(private router: Router, public budgetsService: BudgetsService) {}
+  constructor(public budgetsService: BudgetsService) {}
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -28,10 +39,16 @@ export class CreateProjectComponent implements OnInit {
       reference: new FormControl(null, {
         validators: [Validators.required]
       }),
-      file: new FormControl(null, {
+      qtyFile: new FormControl(null, {
         validators: [Validators.required]
-      })
+      }),
     });
+  }
+
+  onAddedQuantity(event: Event){
+    const qtyFile = (event.target as HTMLInputElement).files[0];
+    this.form.patchValue({qtyFile});
+    this.form.get('qtyFile').updateValueAndValidity();
   }
 
   onAddBudget() {
@@ -43,13 +60,10 @@ export class CreateProjectComponent implements OnInit {
       this.form.value.description,
       this.form.value.reference,
       null,
-      ''
+      '',
+      this.form.value.quantity
     );
-  }
-
-  onAddedQuantity(event: Event){
-    const file = (event.target as HTMLInputElement).files[0];
-    this.form.patchValue({file});
-    this.form.get('file').updateValueAndValidity();
+    console.log(this.form.value);
+    return false;
   }
 }

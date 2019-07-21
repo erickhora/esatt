@@ -52,27 +52,29 @@ export class BudgetsService {
     description: string,
     reference: string,
     content: object,
-    creator: string
+    creator: string,
+    quantity: File
   ) {
-    const budget: Budget = {
-      id: null,
-      name,
-      description,
-      reference,
-      content,
-      creator
-    };
+    // const contentStr = JSON.stringify(content);
+    const budgetData = new FormData();
+    budgetData.append('name', name);
+    budgetData.append('description', description);
+    budgetData.append('reference', reference);
+    budgetData.append('content', null);
+    budgetData.append('creator', creator);
+    budgetData.append('quantity', quantity, name);
     this.http
       .post<{ message: string; budgetId: string }>(
         'http://localhost:3000/api/budgets',
-        budget
+        budgetData
       )
       .subscribe(responseData => {
-        const id = responseData.budgetId;
-        budget.id = id;
+        const budget: Budget = {
+          id: responseData.budgetId, name, description, reference, content, creator
+        };
         this.budgets.push(budget);
         this.budgetsUpdated.next([...this.budgets]);
-        this.router.navigate(['home/budgets', budget.id]);
+        // this.router.navigate(['home/budgets', budget.id]);
       });
   }
 
@@ -83,90 +85,7 @@ export class BudgetsService {
         'http://localhost:3000/api/budgets/' + budgetId
       ).pipe(map(retrievedBudget => {
         retrievedBudget.budget.id = budgetId;
-        retrievedBudget.budget.content = (
-          [
-            {
-               "id": 1,
-               "name": "Tijolo",
-               "quantity": "300",
-               "unity": "un",
-               "price": "12.76",
-               "reference": "sinapi"
-            },
-            {
-               "id": 2,
-               "name": "Cimento",
-               "quantity": "30",
-               "unity": "kg",
-               "price": "120.80",
-               "reference": "sinapi"
-            },
-            {
-               "id": 3,
-               "name": "Porta",
-               "quantity": "4",
-               "unity": "m2",
-               "price": "70.75",
-               "reference": "sinapi"
-            },
-            {
-               "id": 4,
-               "name": "Tijolo",
-               "quantity": "300",
-               "unity": "un",
-               "price": "12.76",
-               "reference": "sinapi"
-            },
-            {
-               "id": 5,
-               "name": "Tijolo",
-               "quantity": "300",
-               "unity": "un",
-               "price": "12.76",
-               "reference": "sinapi"
-            },
-            {
-               "id": 6,
-               "name": "Tijolo",
-               "quantity": "300",
-               "unity": "un",
-               "price": "12.76",
-               "reference": "sinapi"
-            },
-            {
-               "id": 7,
-               "name": "Tijolo",
-               "quantity": "300",
-               "unity": "un",
-               "price": "12.76",
-               "reference": "sinapi"
-            },
-            {
-               "id": 8,
-               "name": "Tijolo",
-               "quantity": "300",
-               "unity": "un",
-               "price": "12.76",
-               "reference": "sinapi"
-            },
-            {
-               "id": 9,
-               "name": "Tijolo",
-               "quantity": "300",
-               "unity": "un",
-               "price": "12.76",
-               "reference": "sinapi"
-            },
-            {
-               "id": 10,
-               "name": "Tijolo",
-               "quantity": "300",
-               "unity": "un",
-               "price": "12.76",
-               "reference": "sinapi"
-            }
-         ]
-        );
+        // retrievedBudget.budget.content = ();
         return this._budget = retrievedBudget.budget;
       }));
   }

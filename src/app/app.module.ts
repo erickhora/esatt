@@ -30,6 +30,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { FilterPipe } from './filter.pipe';
 import { SignupService } from './services/signup.service';
+import { BudgetChoiceComponent } from './home/budget-choice/budget-choice.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { SignupService } from './services/signup.service';
     MainLayoutComponent,
     SignupComponent,
     LatestHistoryComponent,
-    FilterPipe
+    FilterPipe,
+    BudgetChoiceComponent,
   ],
   imports: [
     BrowserModule,

@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   { path: 'home/budgets', component: HistoryComponent },
   { path: 'home/budgets/:id', component: BudgetComponent },
-  { path: 'home/new-project', component: CreateProjectComponent },
+  { path: 'home/new-budget', component: CreateProjectComponent },
   { path: 'signup', component: SignupComponent },
   // { path: 'home/teams', component: TeamsComponent },
   { path: '**', redirectTo: '/'}

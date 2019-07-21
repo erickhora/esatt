@@ -1,0 +1,80 @@
+{
+  "id": 1,
+  "name": "Tijolo",
+  "quantity": "300",
+  "unity": "un",
+  "price": "12.76",
+  "reference": "sinapi"
+},
+{
+  "id": 2,
+  "name": "Cimento",
+  "quantity": "30",
+  "unity": "kg",
+  "price": "120.80",
+  "reference": "sinapi"
+},
+{
+  "id": 3,
+  "name": "Porta",
+  "quantity": "4",
+  "unity": "m2",
+  "price": "70.75",
+  "reference": "sinapi"
+},
+{
+  "id": 4,
+  "name": "Tijolo",
+  "quantity": "300",
+  "unity": "un",
+  "price": "12.76",
+  "reference": "sinapi"
+},
+{
+  "id": 5,
+  "name": "Tijolo",
+  "quantity": "300",
+  "unity": "un",
+  "price": "12.76",
+  "reference": "sinapi"
+},
+{
+  "id": 6,
+  "name": "Tijolo",
+  "quantity": "300",
+  "unity": "un",
+  "price": "12.76",
+  "reference": "sinapi"
+},
+{
+  "id": 7,
+  "name": "Tijolo",
+  "quantity": "300",
+  "unity": "un",
+  "price": "12.76",
+  "reference": "sinapi"
+},
+{
+  "id": 8,
+  "name": "Tijolo",
+  "quantity": "300",
+  "unity": "un",
+  "price": "12.76",
+  "reference": "sinapi"
+},
+{
+  "id": 9,
+  "name": "Tijolo",
+  "quantity": "300",
+  "unity": "un",
+  "price": "12.76",
+  "reference": "sinapi"
+},
+{
+  "id": 10,
+  "name": "Tijolo",
+  "quantity": "300",
+  "unity": "un",
+  "price": "12.76",
+  "reference": "sinapi"
+})
