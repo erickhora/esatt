@@ -1,5 +1,6 @@
 const express = require('express');
 const multer = require('multer');
+const xlsx = require('xlsx');
 
 const Budget = require("../models/budget");
 
@@ -47,6 +48,11 @@ router.post("", multer({storage: qtyStorage}).single("quantity"), (req, res, nex
     creator: "Erick"
   });
   budget.save().then(createdBudget => {
+    //transformar quantitativos em JSON
+    const file = xlsx.readFile(toString(createdBudget.content));
+    const fileSheet = file.Sheets[file.SheetNames[0]];
+    const content = xlsx.utils.sheet_to_json(fileSheet);
+    //cruzar com tabela de referência escolhida
     res.status(201).json({
       message: "Um novo orçamento foi criado com sucesso.",
       budget: {
@@ -54,7 +60,7 @@ router.post("", multer({storage: qtyStorage}).single("quantity"), (req, res, nex
         name: createdBudget.name,
         description: createdBudget.description,
         reference: createdBudget.reference,
-        content: createdBudget.content,
+        content: content,
         creator: createdBudget.creator,
       }
     });
@@ -67,8 +73,6 @@ router.post("", multer({storage: qtyStorage}).single("quantity"), (req, res, nex
 //GET Um orçamento
 router.get("/:id", (req, res, next) => {
   Budget.findOne({_id: req.params.id }).then(result => {
-    //transformar quantitativos em JSON;
-    //cruzar com tabela de referência escolhida
     res.status(200).json({
       message: "Orçamento " + result._id + " recuperado com sucesso!",
       budget: {
