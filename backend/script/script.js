@@ -1,22 +1,31 @@
 const xlsx = require('xlsx');
-const fs = require('fs');
 
-//Desonerados workbooks
-const desCatCompAnaliticas = xlsx.readFile('../tables/sinapi/2019/05/desonerado/CATALOGO_COMPOSICOES_ANALITICAS_EXCEL_05_2019.xls');
-const desCustoCompAnalitico = xlsx.readFile('../tables/sinapi/2019/05/desonerado/SINAPI_Custo_Ref_Composicoes_Analitico_PE_201905_Desonerado.xls');
-const desCustoCompSintetico = xlsx.readFile('../tables/sinapi/2019/05/desonerado/SINAPI_Custo_Ref_Composicoes_Sintetico_PE_201905_Desonerado.xls');
-const desPrecoInsumos = xlsx.readFile('../tables/sinapi/2019/05/desonerado/SINAPI_Preco_Ref_Insumos_PE_052019_Desonerado.XLS');
+const budget = xlsx.readFile("../../utilities/budgetTest.xlsx");
+const budgetSheet = budget.Sheets[budget.SheetNames[0]];
+const budgetContent = xlsx.utils.sheet_to_json(budgetSheet);
 
-//Desonerados worksheets
-const sheet_desCatCompAnaliticas = desCatCompAnaliticas.Sheets['Com custo'];
-const sheet_desCustoCompAnalitico = desCustoCompAnalitico.Sheets['planilhanull'];
-const sheet_desCustoCompSintetico = desCustoCompSintetico.Sheets['planilhanull'];
-const sheet_desPrecoInsumos = desPrecoInsumos.Sheets['sheet1'];
+const reference = xlsx.readFile("../../utilities/referenceTest.xlsx");
+const referenceSheet = reference.Sheets[reference.SheetNames[0]];
+const referenceContent = xlsx.utils.sheet_to_json(referenceSheet);
 
-//transformando em JSON
-const json_desCatCompAnaliticas = xlsx.utils.sheet_to_json(sheet_desCatCompAnaliticas);
-const json_desCustoCompAnalitico = xlsx.utils.sheet_to_json(sheet_desCustoCompAnalitico);
-const json_desCustoCompSintetico = xlsx.utils.sheet_to_json(sheet_desCustoCompSintetico);
-const json_desPrecoInsumos = xlsx.utils.sheet_to_json(sheet_desPrecoInsumos);
+// budgetContent.map((record) => {
+//   console.log(record.preco);
+// });
 
-console.log(json_desCatCompAnaliticas);
+// for(let i = 0; i < budgetContent.length; i++) {
+//   budgetContent[i].preco = referenceContent[i].preco;
+// }
+
+const bSize = budgetContent.length;
+const rSize = referenceContent.length;
+
+for(let i = 0; i < bSize; i++) {
+  for(let j = 0; j < rSize; j++) {
+    console.log(i + ' e ' + j);
+  }
+  // for(let j = 0; j < rSize; i++){
+  //   console.log('i é: ' + i + ' e j é: ' + j);
+  // }
+}
+
+// console.log(bSize + ' e ' + rSize);
