@@ -49,11 +49,11 @@ router.post("", multer({storage: qtyStorage}).single("quantity"), (req, res, nex
   });
   budget.save().then(createdBudget => {
     //transformar quantitativos em JSON
-    const file = xlsx.readFile(createdBudget.content);
-    const fileSheet = file.Sheets[file.SheetNames[0]];
-    const content = xlsx.utils.sheet_to_json(fileSheet);
-    console.log(content);
+    const qtyFile = xlsx.readFile(createdBudget.content);
+    const qtyFileSheet = qtyFile.Sheets[qtyFile.SheetNames[0]];
+    const qty = xlsx.utils.sheet_to_json(qtyFileSheet);
     //cruzar com tabela de referência escolhida
+
     res.status(201).json({
       message: "Um novo orçamento foi criado com sucesso.",
       budget: {

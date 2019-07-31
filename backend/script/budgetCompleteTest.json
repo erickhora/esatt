@@ -1,0 +1,828 @@
+[
+  {
+    "item": "1",
+    "servico_material": "SERVIÇOS PRELIMINARES",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "1.1",
+    "servico_material": "Raspagem, Limpeza do Terreno e Remoção de Entulhos",
+    "unidade": "m2",
+    "quantidade": 619.7765,
+    "pu_material": 4.907,
+    "pu_obra": 0,
+    "pTotal": "3041.24"
+  },
+  {
+    "item": "1.2",
+    "servico_material": "Bancada de Locação da Obra",
+    "unidade": "m",
+    "quantidade": 150,
+    "pu_material": 15.681000000000001,
+    "pu_obra": 20.069999618530275,
+    "pTotal": "5362.65"
+  },
+  {
+    "item": "1.3",
+    "servico_material": "Projeto Arquitetura",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 6000,
+    "pu_obra": "-",
+    "pTotal": "NaN"
+  },
+  {
+    "item": "1.4",
+    "servico_material": "Projeto Instalações",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 4500,
+    "pu_obra": "-",
+    "pTotal": "NaN"
+  },
+  {
+    "item": "1.5",
+    "servico_material": "Projeto Estrutural",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 4385.01,
+    "pu_obra": "-",
+    "pTotal": "NaN"
+  },
+  {
+    "item": "1.6",
+    "servico_material": "Sondagens geotécnicas",
+    "unidade": "m",
+    "quantidade": 150,
+    "pu_material": 75,
+    "pu_obra": "-",
+    "pTotal": "NaN"
+  },
+  {
+    "item": "2",
+    "servico_material": "FUNDAÇÕES DIRETAS",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "2.1",
+    "servico_material": "Escavação Mista",
+    "unidade": "m3",
+    "quantidade": 264.6,
+    "pu_material": 5.6,
+    "pu_obra": 15.624900030517578,
+    "pTotal": "5616.11"
+  },
+  {
+    "item": "2.2",
+    "servico_material": "Reaterro Compactado Manualmente",
+    "unidade": "m3",
+    "quantidade": 220.42000000000002,
+    "pu_material": 0,
+    "pu_obra": 46.29599931335449,
+    "pTotal": "10204.56"
+  },
+  {
+    "item": "2.3",
+    "servico_material": "Remoção de Entulhos",
+    "unidade": "m3",
+    "quantidade": 57.43400000000001,
+    "pu_material": 33.9,
+    "pu_obra": 26.04149973297119,
+    "pTotal": "3442.68"
+  },
+  {
+    "item": "2.4",
+    "servico_material": "Regularização de Fundo de Vala",
+    "unidade": "m2",
+    "quantidade": 323.24,
+    "pu_material": 0,
+    "pu_obra": 7.233750190734863,
+    "pTotal": "2338.24"
+  },
+  {
+    "item": "2.5",
+    "servico_material": "Concreto não Estrutural",
+    "unidade": "m3",
+    "quantidade": 10.41,
+    "pu_material": 186.60000000000002,
+    "pu_obra": 191.4390033569336,
+    "pTotal": "3935.39"
+  },
+  {
+    "item": "2.6",
+    "servico_material": "Concreto Estrutural 30 MPa",
+    "unidade": "m3",
+    "quantidade": 33.77,
+    "pu_material": 224.4,
+    "pu_obra": 268.35749389648436,
+    "pTotal": "16640.42"
+  },
+  {
+    "item": "2.7",
+    "servico_material": "Aço CA-50 / CA-60",
+    "unidade": "kg",
+    "quantidade": 2701.6000000000004,
+    "pu_material": 3.3393500000000005,
+    "pu_obra": 2.8097999895095827,
+    "pTotal": "16612.54"
+  },
+  {
+    "item": "2.8",
+    "servico_material": "Fôrma de Madeira",
+    "unidade": "m2",
+    "quantidade": 189.42,
+    "pu_material": 39.337801865539,
+    "pu_obra": 60.21000076293946,
+    "pTotal": "18856.34"
+  },
+  {
+    "item": "3",
+    "servico_material": "ESTRUTURA",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "3.1",
+    "servico_material": "Concreto Usinado 30 MPa",
+    "unidade": "m3",
+    "quantidade": 32.59245000000001,
+    "pu_material": 298.26,
+    "pu_obra": 123.6825015258789,
+    "pTotal": "13752.14"
+  },
+  {
+    "item": "3.2",
+    "servico_material": "Armadura de Aço CA-50 / CA-60",
+    "unidade": "kg",
+    "quantidade": 2933.3205000000007,
+    "pu_material": 3.3393500000000005,
+    "pu_obra": 2.8097999895095827,
+    "pTotal": "18037.43"
+  },
+  {
+    "item": "3.3",
+    "servico_material": "Fôrma de Madeira",
+    "unidade": "m2",
+    "quantidade": 475.10799999999995,
+    "pu_material": 39.337801865539,
+    "pu_obra": 60.21000076293946,
+    "pTotal": "47295.96"
+  },
+  {
+    "item": "3.4",
+    "servico_material": "Cimbramento Metálico",
+    "unidade": "m2",
+    "quantidade": 154.26,
+    "pu_material": 47.729,
+    "pu_obra": 16.056000076293945,
+    "pTotal": "9839.47"
+  },
+  {
+    "item": "4",
+    "servico_material": "FECHAMENTO",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "4.1",
+    "servico_material": "Locação de Alvenaria",
+    "unidade": "m",
+    "quantidade": 264.15,
+    "pu_material": 0,
+    "pu_obra": 12.04200005722046,
+    "pTotal": "3180.89"
+  },
+  {
+    "item": "4.2",
+    "servico_material": "Alvenaria com Bloco 14x19x39 cm",
+    "unidade": "m2",
+    "quantidade": 472.96999999999997,
+    "pu_material": 28.580399999999997,
+    "pu_obra": 48.16800022888184,
+    "pTotal": "36299.69"
+  },
+  {
+    "item": "4.3",
+    "servico_material": "Aperto de Alvenaria",
+    "unidade": "m",
+    "quantidade": 198.25,
+    "pu_material": 1.0727520000000001,
+    "pu_obra": 20.069999618530275,
+    "pTotal": "4191.55"
+  },
+  {
+    "item": "4.4",
+    "servico_material": "Tela de Ligação Alvenaria/Estrutura",
+    "unidade": "m",
+    "quantidade": 141.891,
+    "pu_material": 2.8,
+    "pu_obra": 10.034999809265138,
+    "pTotal": "1821.17"
+  },
+  {
+    "item": "5",
+    "servico_material": "COBERTA",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "5.1",
+    "servico_material": "Estrutura Metálica Para Telhamento",
+    "unidade": "m2",
+    "quantidade": 448,
+    "pu_material": 162.5,
+    "pu_obra": 0,
+    "pTotal": "72800.00"
+  },
+  {
+    "item": "5.2",
+    "servico_material": "Cobertura com Telha Metálica Trapezoidal Termoacústica 30mm",
+    "unidade": "m2",
+    "quantidade": 448,
+    "pu_material": 86,
+    "pu_obra": 25,
+    "pTotal": "49728.00"
+  },
+  {
+    "item": "5.3",
+    "servico_material": "Calha Metálica",
+    "unidade": "m",
+    "quantidade": 112,
+    "pu_material": 120,
+    "pu_obra": 0,
+    "pTotal": "13440.00"
+  },
+  {
+    "item": "5.4",
+    "servico_material": "Fechamento Vertical com Brises Metálicos",
+    "unidade": "m2",
+    "quantidade": 56,
+    "pu_material": 320,
+    "pu_obra": 0,
+    "pTotal": "17920.00"
+  },
+  {
+    "item": "6",
+    "servico_material": "REVESTIMENTO INTERNO",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "6.1",
+    "servico_material": "Chapisco Interno 1:3",
+    "unidade": "m2",
+    "quantidade": 951.9,
+    "pu_material": 0.9017999999999999,
+    "pu_obra": 3.6168750953674316,
+    "pTotal": "4301.33"
+  },
+  {
+    "item": "6.2",
+    "servico_material": "Emboço Interno, Cimento, Cal e Areia",
+    "unidade": "m2",
+    "quantidade": 562.7149999999998,
+    "pu_material": 5.133570000000001,
+    "pu_obra": 32.11200015258789,
+    "pTotal": "20958.64"
+  },
+  {
+    "item": "6.3",
+    "servico_material": "Reboco Interno, Cimento, Cal e Areia",
+    "unidade": "m2",
+    "quantidade": 389.18,
+    "pu_material": 5.133570000000001,
+    "pu_obra": 34.118999923706056,
+    "pTotal": "15276.32"
+  },
+  {
+    "item": "6.4",
+    "servico_material": "Revestimento Cerâmico, 30x30, Tipo A",
+    "unidade": "m2",
+    "quantidade": 562.7149999999998,
+    "pu_material": 30.5465,
+    "pu_obra": 40.46625076293945,
+    "pTotal": "39959.94"
+  },
+  {
+    "item": "7",
+    "servico_material": "FORRO",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "7.1",
+    "servico_material": "Forro de Gesso Liso em Placas",
+    "unidade": "m2",
+    "quantidade": 35.961,
+    "pu_material": 22.4,
+    "pu_obra": 9.6,
+    "pTotal": "1150.75"
+  },
+  {
+    "item": "7.2",
+    "servico_material": "Junta de Dilatação - Rodateto",
+    "unidade": "m",
+    "quantidade": 41.22,
+    "pu_material": 15.399999999999999,
+    "pu_obra": 6.6,
+    "pTotal": "906.84"
+  },
+  {
+    "item": "8",
+    "servico_material": "PAVIMENTAÇÃO INTERNA",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "8.1",
+    "servico_material": "Regularização da Superfície do Terreno",
+    "unidade": "m2",
+    "quantidade": 486.02600000000007,
+    "pu_material": 0,
+    "pu_obra": 7.233750190734863,
+    "pTotal": "3515.79"
+  },
+  {
+    "item": "8.2",
+    "servico_material": "Laje de Contrapiso, Concreto 15 Mpa, c/ 10 cm",
+    "unidade": "m2",
+    "quantidade": 486.02600000000007,
+    "pu_material": 24.584500000000002,
+    "pu_obra": 22.495500419616697,
+    "pTotal": "22882.10"
+  },
+  {
+    "item": "8.3",
+    "servico_material": "Cimentado p/regularização da laje 1:4",
+    "unidade": "m2",
+    "quantidade": 160.2160000000001,
+    "pu_material": 6.080399999999999,
+    "pu_obra": 24.08400011444092,
+    "pTotal": "4832.82"
+  },
+  {
+    "item": "8.4",
+    "servico_material": "Piso Cerâmico 300x30, Tipo A",
+    "unidade": "m2",
+    "quantidade": 160.2160000000001,
+    "pu_material": 30.5465,
+    "pu_obra": 40.46625076293945,
+    "pTotal": "11377.38"
+  },
+  {
+    "item": "8.5",
+    "servico_material": "Piso Cimentado com Acabamento Antiderrapante",
+    "unidade": "m2",
+    "quantidade": 325.81,
+    "pu_material": 6.7536,
+    "pu_obra": 30.10500038146973,
+    "pTotal": "12008.90"
+  },
+  {
+    "item": "9",
+    "servico_material": "REVESTIMENTO EXTERNO",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "9.1",
+    "servico_material": "Chapisco Externo 1:3",
+    "unidade": "m2",
+    "quantidade": 123.235,
+    "pu_material": 1.2465600000000001,
+    "pu_obra": 5.063624895095825,
+    "pTotal": "777.64"
+  },
+  {
+    "item": "9.2",
+    "servico_material": "Massa Única Externa 1:2:6 c/2,5cm",
+    "unidade": "m2",
+    "quantidade": 123.235,
+    "pu_material": 6.103,
+    "pu_obra": 34.118999923706056,
+    "pTotal": "4956.76"
+  },
+  {
+    "item": "10",
+    "servico_material": "ESQUADRIAS DE ALUMÍNIO",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "10.1",
+    "servico_material": "Assentamento de Contramarco de Esquadria de Alumínio",
+    "unidade": "m2",
+    "quantidade": 9.9,
+    "pu_material": 1.05815088,
+    "pu_obra": 40.13999923706055,
+    "pTotal": "407.86"
+  },
+  {
+    "item": "10.2",
+    "servico_material": "Janela de Alumínio Anodizado Natural com Vidro Liso Incolor",
+    "unidade": "m2",
+    "quantidade": 3.5,
+    "pu_material": 550,
+    "pu_obra": 0,
+    "pTotal": "1925.00"
+  },
+  {
+    "item": "10.3",
+    "servico_material": "Porta de Alumínio Anodizado Natural em Veneziana (0,60x1,80)m",
+    "unidade": "und",
+    "quantidade": 4,
+    "pu_material": 810,
+    "pu_obra": 0,
+    "pTotal": "3240.00"
+  },
+  {
+    "item": "10.4",
+    "servico_material": "Porta de Alumínio Anodizado Natural em Veneziana (0,80x1,80)m",
+    "unidade": "und",
+    "quantidade": 2,
+    "pu_material": 1080.0000000000002,
+    "pu_obra": 0,
+    "pTotal": "2160.00"
+  },
+  {
+    "item": "11",
+    "servico_material": "ESQUADRIAS DE FERRO",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "11.1",
+    "servico_material": "Gradil de Ferro Telado com Pintura Esmalte Sintético - Depósito de Lixo",
+    "unidade": "m2",
+    "quantidade": 3.2,
+    "pu_material": 320,
+    "pu_obra": 32.11200015258789,
+    "pTotal": "1126.76"
+  },
+  {
+    "item": "11.2",
+    "servico_material": "Gradil de Ferro Telado com Pintura Esmalte Sintético - Fechamento de Lojas",
+    "unidade": "m2",
+    "quantidade": 98.79999999999998,
+    "pu_material": 320,
+    "pu_obra": 32.11200015258789,
+    "pTotal": "34788.67"
+  },
+  {
+    "item": "12",
+    "servico_material": "PORTA DE MADEIRA",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "12.1",
+    "servico_material": "Porta Pronta c/Acabamento Primer Branco - (0,80x2,10)m ",
+    "unidade": "und",
+    "quantidade": 3,
+    "pu_material": 333.5,
+    "pu_obra": 80,
+    "pTotal": "1240.50"
+  },
+  {
+    "item": "12.2",
+    "servico_material": "Fechadura Popline Reta, Externa, Cromada",
+    "unidade": "und",
+    "quantidade": 3,
+    "pu_material": 52,
+    "pu_obra": 0,
+    "pTotal": "156.00"
+  },
+  {
+    "item": "12.3",
+    "servico_material": "Dobradiça Leve 3x2 Cromada, s/Anel Pino Chato",
+    "unidade": "und",
+    "quantidade": 9,
+    "pu_material": 2,
+    "pu_obra": 0,
+    "pTotal": "18.00"
+  },
+  {
+    "item": "13",
+    "servico_material": "PINTURA",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "13.1",
+    "servico_material": "Pintura Interna com Textura Acrílica",
+    "unidade": "m2",
+    "quantidade": 289.5799999999999,
+    "pu_material": 18,
+    "pu_obra": 12,
+    "pTotal": "8687.40"
+  },
+  {
+    "item": "13.2",
+    "servico_material": "Pintura Interna com Massa e Tinta PVA - Tetos",
+    "unidade": "m2",
+    "quantidade": 135.56,
+    "pu_material": 19.5,
+    "pu_obra": 13,
+    "pTotal": "4405.70"
+  },
+  {
+    "item": "13.3",
+    "servico_material": "Pintura Externa com Textura Acrílica - Fachadas",
+    "unidade": "m2",
+    "quantidade": 123.235,
+    "pu_material": 23.1,
+    "pu_obra": 15.4,
+    "pTotal": "4744.55"
+  },
+  {
+    "item": "13.4",
+    "servico_material": "Pintura Esmalte Sintético sobre Madeira",
+    "unidade": "m2",
+    "quantidade": 10.080000000000002,
+    "pu_material": 18,
+    "pu_obra": 12,
+    "pTotal": "302.40"
+  },
+  {
+    "item": "14",
+    "servico_material": "GRANITOS",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "14.1",
+    "servico_material": "Soleira de Granito Natural - L=18 cm - c/Acamento de Topo",
+    "unidade": "m",
+    "quantidade": 4,
+    "pu_material": 64.436,
+    "pu_obra": 15.65,
+    "pTotal": "320.34"
+  },
+  {
+    "item": "14.2",
+    "servico_material": "Balcão de Granito Natural Polido - (1,60 x 0,55) m",
+    "unidade": "und",
+    "quantidade": 1,
+    "pu_material": 526.8,
+    "pu_obra": 125.45,
+    "pTotal": "652.25"
+  },
+  {
+    "item": "14.3",
+    "servico_material": "Balcão de Granito Natural Polido - (2,30 x 0,55) m",
+    "unidade": "und",
+    "quantidade": 1,
+    "pu_material": 688.15,
+    "pu_obra": 165.7875,
+    "pTotal": "853.94"
+  },
+  {
+    "item": "14.4",
+    "servico_material": "Divisória de Box em Granito Polido",
+    "unidade": "m2",
+    "quantidade": 19.83,
+    "pu_material": 321,
+    "pu_obra": 80.25,
+    "pTotal": "7956.79"
+  },
+  {
+    "item": "15",
+    "servico_material": "IMPERMEABILIZAÇÃO",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "15.1",
+    "servico_material": "Laje de Coberta - Manta Asfáltica, e=3mm, c/Primer Asfáltico.",
+    "unidade": "m2",
+    "quantidade": 184.12499999999997,
+    "pu_material": 40.599999999999994,
+    "pu_obra": 17.4,
+    "pTotal": "10679.25"
+  },
+  {
+    "item": "15.2",
+    "servico_material": "Regularização da Laje",
+    "unidade": "m2",
+    "quantidade": 184.12499999999997,
+    "pu_material": 5.764799999999999,
+    "pu_obra": 32.11200015258789,
+    "pTotal": "6974.07"
+  },
+  {
+    "item": "15.3",
+    "servico_material": "Proteção Mecânica",
+    "unidade": "m2",
+    "quantidade": 184.12499999999997,
+    "pu_material": 3.0391199999999996,
+    "pu_obra": 20.069999618530275,
+    "pTotal": "4254.97"
+  },
+  {
+    "item": "16",
+    "servico_material": "ÁREA EXTERNA",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "16.1",
+    "servico_material": "Ajardinamento com Arbustos de Pequeno Porte",
+    "unidade": "m2",
+    "quantidade": 79.71,
+    "pu_material": 90,
+    "pu_obra": 0,
+    "pTotal": "7173.90"
+  },
+  {
+    "item": "16.2",
+    "servico_material": "Regularização da Superfície do Terreno",
+    "unidade": "m2",
+    "quantidade": 132.2,
+    "pu_material": 0,
+    "pu_obra": 7.233750190734863,
+    "pTotal": "956.30"
+  },
+  {
+    "item": "16.3",
+    "servico_material": "Calçada em Concreto Simples 15 Mpa, Espessura 10 cm, Acabamento Antiderrapante",
+    "unidade": "m2",
+    "quantidade": 132.2,
+    "pu_material": 24.584500000000002,
+    "pu_obra": 12,
+    "pTotal": "4836.47"
+  },
+  {
+    "item": "16.4",
+    "servico_material": "Meio Fio de Concreto Pré-moldado",
+    "unidade": "m",
+    "quantidade": 128.63,
+    "pu_material": 33.225,
+    "pu_obra": 18,
+    "pTotal": "6589.07"
+  },
+  {
+    "item": "17",
+    "servico_material": "INSATLAÇÕES GERAIS",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "17.1",
+    "servico_material": "Entrada de Energia - Centro de Medição",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 8150,
+    "pu_obra": 0,
+    "pTotal": "8150.00"
+  },
+  {
+    "item": "17.2",
+    "servico_material": "Rede de Alimentadores Gerais",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 9100,
+    "pu_obra": 0,
+    "pTotal": "9100.00"
+  },
+  {
+    "item": "17.3",
+    "servico_material": "Rede de Distribuição de Iluminação e Tomadas",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 22600,
+    "pu_obra": 0,
+    "pTotal": "22600.00"
+  },
+  {
+    "item": "17.4",
+    "servico_material": "Telefonia, TV e Internet",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 2550,
+    "pu_obra": 0,
+    "pTotal": "2550.00"
+  },
+  {
+    "item": "17.5",
+    "servico_material": "Água Fria - Rede de Distribuição Geral",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 1750,
+    "pu_obra": 0,
+    "pTotal": "1750.00"
+  },
+  {
+    "item": "17.6",
+    "servico_material": "Esgoto - Rede Geral de Esgoto",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 5200,
+    "pu_obra": 0,
+    "pTotal": "5200.00"
+  },
+  {
+    "item": "17.7",
+    "servico_material": "Água Pluvial - Rede Geral",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 1000,
+    "pu_obra": 0,
+    "pTotal": "1000.00"
+  },
+  {
+    "item": "17.8",
+    "servico_material": "Louças e Metais Sanitários",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 5800,
+    "pu_obra": 0,
+    "pTotal": "5800.00"
+  },
+  {
+    "item": "17.9",
+    "servico_material": "Proteção e Combate a Incêndio - PCI",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 1450,
+    "pu_obra": 0,
+    "pTotal": "1450.00"
+  },
+  {
+    "item": "17.10",
+    "servico_material": "Sistema Final de Esgoto Sanitário",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 37000,
+    "pu_obra": 0,
+    "pTotal": "37000.00"
+  },
+  {
+    "item": "17.11",
+    "servico_material": "Reservatório Inferior",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 21100,
+    "pu_obra": 0,
+    "pTotal": "21100.00"
+  },
+  {
+    "item": "17.12",
+    "servico_material": "Apoio Civil para as Instalações",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": 8640,
+    "pu_obra": 0,
+    "pTotal": "8640.00"
+  },
+  {
+    "item": "18",
+    "servico_material": "ENTREGA DA OBRA",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "18.1",
+    "servico_material": "Limpeza Final e Retoques",
+    "unidade": "m2",
+    "quantidade": 516.52,
+    "pu_material": 8,
+    "pu_obra": 12,
+    "pTotal": "10330.40"
+  },
+  {
+    "item": "19",
+    "servico_material": "DESPESAS DE ADMINISTRAÇÃO DA OBRA",
+    "pu_material": "Total",
+    "pu_obra": "Total",
+    "pTotal": "Total"
+  },
+  {
+    "item": "19.1",
+    "servico_material": "Bonificação e Despesas Indiretas - BDI = (35%)",
+    "unidade": "vb",
+    "quantidade": 1,
+    "pu_material": "280,075,24",
+    "pu_obra": 0,
+    "pTotal": "NaN"
+  }
+]
