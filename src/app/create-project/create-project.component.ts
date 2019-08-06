@@ -37,7 +37,7 @@ export class CreateProjectComponent implements OnInit {
     });
   }
 
-  onAddedQuantity(event: Event){
+  onAddedQuantity(event: Event) {
     const qtyFile = (event.target as HTMLInputElement).files[0];
     this.fileName = qtyFile.name;
     this.form.patchValue({quantity: qtyFile});

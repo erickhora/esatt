@@ -30,11 +30,12 @@
   <form [formGroup]="form" (submit)="onAddPersonalReferences()">
     <button
     class="btn btn-outline btn-outline-success btn-block mt-2"
-    type="submit"
+    type="button"
       (click)="filePicker.click()"
     >
-      Enviar minhas referências
+      Adicionar minhas referências
     </button>
+    <small>{{ fileName }}</small>
     <input
       type="file"
       #filePicker
@@ -42,8 +43,10 @@
       accept="application/vnd.ms-excel,
     application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     />
-    <button class="btn btn-block btn-success" (click)="afterUpload = true;">Criar Projeto</button>
+    <button class="btn btn-block btn-success mb-3" type="submit">Enviar</button>
   </form>
+
+  <button class="btn btn-block btn-success" (click)="afterUpload = true;">Criar Projeto</button>
 
   <div class="container d-flex flex-column align-items-center" *ngIf="afterUpload">
     <app-create-project class="mt-4"></app-create-project>

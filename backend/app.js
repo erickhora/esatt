@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require('cors');
 
 const budgetRoutes = require('./routes/budgets');
+const referenceRoutes = require('./routes/references');
 
 const app = express();
 
@@ -26,22 +27,11 @@ mongoose
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/quantities", express.static(path.join("backend/quantities")));
+app.use("/references", express.static(path.join("backend/references")));
 app.use(cors());
 
-// app.use((req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
-//   );
-//   next();
-// });
-
 app.use("/api/budgets", budgetRoutes);
+app.use("/api/references", referenceRoutes);
 
 app.listen(port, () => {
   console.log('Servidor iniciado na porta ' + port);

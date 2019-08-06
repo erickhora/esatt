@@ -48,7 +48,10 @@
           Adicione sua tabela de quantitativos
         </button>
         <small>{{ fileName }}</small>
-        <input type="file" #filePicker (change)="onAddedQuantity($event)" />
+        <input type="file" #filePicker (change)="onAddedQuantity($event)"
+        accept="application/vnd.ms-excel,
+    application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        />
         <hr />
         <button class="btn btn-create" type="submit">Criar orçamento</button>
       </form>

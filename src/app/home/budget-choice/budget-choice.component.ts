@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { ReferencesService } from 'src/app/services/references.service';
 
 @Component({
   selector: 'app-budget-choice',
@@ -13,20 +15,39 @@ export class BudgetChoiceComponent implements OnInit{
   myRef = false;
   myPrices = false;
   afterUpload = false;
+  fileName;
   form: FormGroup;
 
-  constructor() {}
+  constructor(public referencesService: ReferencesService ) {}
 
-  ngOnInit() {}
-
-  onReferencePicked(event: Event) {
-    const refFiles = (event.target as HTMLInputElement).files;
-    this.form.patchValue({refFiles});
-    this.form.get('refFiles').updateValueAndValidity();
+  ngOnInit() {
+    this.form = new FormGroup({
+      reference: new FormControl(null, {
+        validators: [Validators.required]
+      })
+    });
   }
 
-  // onAddPersonalReferences() {
+  onReferencePicked(event: Event) {
+    const refFile = (event.target as HTMLInputElement).files[0];
+    this.fileName = refFile.name;
+    this.form.patchValue({reference: refFile});
+    this.form.get('reference').updateValueAndValidity();
+    console.log(refFile);
+    console.log(this.form);
+  }
 
-  // }
+  onAddPersonalReferences() {
+    if (this.form.invalid) {
+      console.log('Invalid: ' + this.form.invalid);
+      console.log(this.form.value);
+      return;
+    }
+    this.referencesService.postReference(
+      this.fileName,
+      this.form.value.reference,
+      ''
+    );
+  }
 
 }

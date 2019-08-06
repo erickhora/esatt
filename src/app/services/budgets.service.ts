@@ -11,9 +11,7 @@ export class BudgetsService {
   private budgets: Budget[] = [];
   private _budget: Budget;
   private budgetsUpdated = new Subject<Budget[]>();
-  /* private _budget: Budget;
-  private budgetRetrieved = new Subject<Budget>();
- */
+
   constructor(private http: HttpClient, private router: Router) {}
 
   // GET Todos os orçamentos
